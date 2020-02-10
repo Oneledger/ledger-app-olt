@@ -1,8 +1,7 @@
-# Ledger boilerplate app
+# OneLedger Nano S/X app
 
 ## Overview
-This app is a boilerplate for a Nano S/X app.
-It does very little, and just expose a minimal API (get_app_config, get_address). 
+This app is an implementation for retrieving public keys / Addresses and signing transactions on the OneLedger network using the Nano S/X.
 
 ## Building and installing
 To build and install the app on your Ledger Nano S you must set up the Ledger Nano S build environments. Please follow the Getting Started instructions at [here](https://ledger.readthedocs.io/en/latest/userspace/getting_started.html).
@@ -37,10 +36,5 @@ make delete
 
 Test functionality:
 ```bash
-# (x or s, depending on your device)
-source prepare-devenv.sh x
 python test_example.py --account_number 12345
 ```
-
-## Documentation
-This follows the specification available in the [`api.asc`](https://github.com/LedgerHQ/ledger-app-boilerplate/blob/master/doc/api.asc).
