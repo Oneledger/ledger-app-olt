@@ -1,19 +1,4 @@
-#*******************************************************************************
-#   Ledger App
-#   (c) 2017 Ledger
-#
-#  Licensed under the Apache License, Version 2.0 (the "License");
-#  you may not use this file except in compliance with the License.
-#  You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS,
-#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#  See the License for the specific language governing permissions and
-#  limitations under the License.
-#*******************************************************************************
+#One Ledger Makefile.
 
 ifeq ($(BOLOS_SDK),)
 $(error Environment variable BOLOS_SDK is not set)
@@ -32,9 +17,9 @@ DEFINES += $(DEFINES_LIB)
 
 
 ifeq ($(TARGET_NAME),TARGET_NANOX)
-	ICONNAME=icons/nanox_app_boilerplate.gif
+	ICONNAME=icons/nanox_logo.gif
 else
-	ICONNAME=icons/nanos_app_boilerplate.gif
+	ICONNAME=icons/logo.gif
 endif
 
 
@@ -149,7 +134,7 @@ release: all
 	export APP_LOAD_PARAMS_EVALUATED="$(shell printf '\\"%s\\" ' $(APP_LOAD_PARAMS))"; \
 	cat load-template.sh | envsubst > load.sh
 	chmod +x load.sh
-	tar -zcf boilerplate-ledger-app-$(APPVERSION).tar.gz load.sh bin/app.hex
+	tar -zcf olt-ledger-app-$(APPVERSION).tar.gz load.sh bin/app.hex
 	rm load.sh
 
 # import generic rules from the sdk
@@ -161,4 +146,4 @@ dep/%.d: %.c Makefile
 
 
 listvariants:
-	@echo VARIANTS COIN boilerplate
+	@echo VARIANTS COIN OLT

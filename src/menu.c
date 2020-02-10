@@ -81,11 +81,11 @@ void dummy_setting_2_data_selector(unsigned int idx) {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
-// Settings menu:
+// Settings menu: *** CURRENTLY NOT IN USE, WILL LEAVE CODE FOR FUTURE USE ***
 
 const char* const settings_submenu_getter_values[] = {
-  "Dummy setting 1",
-  "Dummy setting 2",
+ // "Dummy setting 1",
+  //"Dummy setting 2",
   "Back",
 };
 
@@ -98,12 +98,12 @@ const char* settings_submenu_getter(unsigned int idx) {
 
 void settings_submenu_selector(unsigned int idx) {
   switch(idx) {
-    case 0:
+/*    case 0:
       ux_menulist_init_select(0, dummy_setting_1_data_getter, dummy_setting_1_data_selector, N_storage.dummy_setting_1);
       break;
     case 1:
       ux_menulist_init_select(0, dummy_setting_2_data_getter, dummy_setting_2_data_selector, N_storage.dummy_setting_2);
-      break;
+      break;*/
     default:
       ui_idle();
   }
@@ -114,7 +114,7 @@ UX_STEP_NOCB(
     ux_idle_flow_1_step,
     pnn,
     {
-      &C_boilerplate_logo,
+      &C_oneLedger_logo,
       "OneLedger",
       "is ready",
     });
