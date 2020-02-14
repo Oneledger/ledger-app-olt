@@ -77,7 +77,7 @@ def broadcast_commit(rawTx, signature, pub_key):
 # No confirmation
 
 def getAddress(account_num):
-    apduMessage = "E00201000000" + '{:02x}'.format(len(account_num)/2) + account_num
+    apduMessage = "E00200000000" + '{:02x}'.format(len(account_num)/2) + account_num
     apdu = bytearray.fromhex(apduMessage)
 
     dongle = getDongle(True)
@@ -93,7 +93,6 @@ def getAddress(account_num):
 
     return address, pubKey
 
-#e0030100000089000030399b
 
 def signRawTx(rawTx, account_num):
     apduMessage = "E003010000" + '{:04x}'.format((len(account_num) + len(rawTx)) / 2) + account_num + rawTx
@@ -127,8 +126,10 @@ if __name__ == "__main__":
     raw_txn = create_domain("kevin.ol", address, create_price)
     print "raw create domain tx:", base64.b64decode(raw_txn)
 
+    #RPC layer base 64 encodes message before sending. Need to decode.
     rawTx = base64.b64decode(raw_txn)
 
+    #Using SHA512 to prehash raw message before signing.
     raw_hash = hashlib.sha512(rawTx).hexdigest()
     print "raw hash of tx: ", raw_hash
 
@@ -139,9 +140,12 @@ if __name__ == "__main__":
 
     print "Public Key: ", pubKey[2:]
 
+    #Token indicating that message has been hashed before calculating signature.
+    token = "SHA512"
+
     #base 64 encode binary forms of signature and public key.
     #tx_b64 = base64.b64encode(bytearray.fromhex(raw_hash))
-    signature_b64 = base64.b64encode(bytearray.fromhex(signature_str[2:]))
+    signature_b64 = base64.b64encode( bytearray(token) + bytearray.fromhex(signature_str[2:]) )
     pubKey_b64 = base64.b64encode(bytearray.fromhex(pubKey[2:]))
 
     SignRawTxResponse = {

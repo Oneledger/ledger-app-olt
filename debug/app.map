@@ -3169,7 +3169,7 @@ DEBUG           0xd0000000        0x8
  .debug_abbrev  0x00002826       0xf2 obj/ux_menulist.o
  .debug_abbrev  0x00002918      0x171 obj/ux_stack.o
 
-.debug_line     0x00000000     0x8b2f
+.debug_line     0x00000000     0x8b22
  *(.debug_line)
  .debug_line    0x00000000      0x24e obj/getAddress.o
  .debug_line    0x0000024e      0x1a9 obj/globals.o
@@ -3193,18 +3193,18 @@ DEBUG           0xd0000000        0x8
  .debug_line    0x00006375      0x28c obj/usbd_hid.o
  .debug_line    0x00006601      0x683 obj/usbd_impl.o
  .debug_line    0x00006c84      0x285 obj/usbd_ioreq.o
- .debug_line    0x00006f09      0x3bf obj/utils.o
- .debug_line    0x000072c8      0x5f9 obj/ux_flow_engine.o
- .debug_line    0x000078c1      0x12a obj/ux_layout_bb.o
- .debug_line    0x000079eb      0x134 obj/ux_layout_bn.o
- .debug_line    0x00007b1f      0x14e obj/ux_layout_nnbnn.o
- .debug_line    0x00007c6d      0x39a obj/ux_layout_paging.o
- .debug_line    0x00008007      0x162 obj/ux_layout_pb.o
- .debug_line    0x00008169      0x191 obj/ux_layout_pbb.o
- .debug_line    0x000082fa      0x135 obj/ux_layout_pnn.o
- .debug_line    0x0000842f      0x186 obj/ux_layout_utils.o
- .debug_line    0x000085b5      0x1b1 obj/ux_menulist.o
- .debug_line    0x00008766      0x3c9 obj/ux_stack.o
+ .debug_line    0x00006f09      0x3b2 obj/utils.o
+ .debug_line    0x000072bb      0x5f9 obj/ux_flow_engine.o
+ .debug_line    0x000078b4      0x12a obj/ux_layout_bb.o
+ .debug_line    0x000079de      0x134 obj/ux_layout_bn.o
+ .debug_line    0x00007b12      0x14e obj/ux_layout_nnbnn.o
+ .debug_line    0x00007c60      0x39a obj/ux_layout_paging.o
+ .debug_line    0x00007ffa      0x162 obj/ux_layout_pb.o
+ .debug_line    0x0000815c      0x191 obj/ux_layout_pbb.o
+ .debug_line    0x000082ed      0x135 obj/ux_layout_pnn.o
+ .debug_line    0x00008422      0x186 obj/ux_layout_utils.o
+ .debug_line    0x000085a8      0x1b1 obj/ux_menulist.o
+ .debug_line    0x00008759      0x3c9 obj/ux_stack.o
 
 .debug_frame    0x00000000     0x2958
  *(.debug_frame)

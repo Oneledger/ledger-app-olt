@@ -12746,9 +12746,9 @@ c0d03614:	4620      	mov	r0, r4
 c0d03616:	bd10      	pop	{r4, pc}
 
 c0d03618 <btox>:
-    os_memmove(out, (buffer + j), length);
-    return length;
-}
+#include "menu.h"
+
+#define ACCOUNT_ADDRESS_PREFIX 1
 
 void btox(char *xp, const char *bb, int n)
 {
@@ -12808,7 +12808,7 @@ c0d0366e:	209c      	movs	r0, #156	; 0x9c
 c0d03670:	490b      	ldr	r1, [pc, #44]	; (c0d036a0 <getAddressStringFromBinary+0x54>)
 c0d03672:	4479      	add	r1, pc
 c0d03674:	2304      	movs	r3, #4
-}
+#define ACCOUNT_ADDRESS_PREFIX 1
 
 void btox(char *xp, const char *bb, int n)
 {
