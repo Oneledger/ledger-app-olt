@@ -39,10 +39,10 @@ make delete
 ### Test functionality:
 Get Address
 ```bash
-python test_getAddress.py --account_number 12345
+python tests/test_getAddress.py --account_number 12345
 ```
 
 Sign Transaction Data (One Ledger Network must be running one node here: http://127.0.0.1:26602)
 ```bash
-python test_signRawTx.py
+python tests/test_signRawTx.py
 ```
