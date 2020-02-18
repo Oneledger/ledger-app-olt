@@ -6,15 +6,17 @@ This app is an implementation for retrieving public keys / Addresses and signing
 ## Building and installing
 To build and install the app on your Ledger Nano S you must set up the Ledger Nano S build environments. Please follow the Getting Started instructions at [here](https://ledger.readthedocs.io/en/latest/userspace/getting_started.html).
 
-If you don't want to setup a global environnment, you can also setup one just for this app by sourcing `prepare-devenv.sh` with the right target (`s` or `x`).
+### Notes on Environment Setup:
 
-install prerequisite and switch to a Nano X dev-env:
-
+.bashrc file must export the following paths (Make sure the path ends with a slash):
 ```bash
-sudo apt install python3-venv
-# (x or s, depending on your device)
-source prepare-devenv.sh x 
+export BOLOS_ENV=~/dev/bolos-dev/
+export BOLOS_SDK=~/dev/bolos-dev/nanos-secure-sdk/
+export GCCPATH=~/dev/bolos-dev/gcc-arm-none-eabi-5_3-2016q1/bin/
+export CLANGPATH=~/dev/bolos-dev/clang-arm-fropi/bin/
 ```
+
+Update your Nano S device with the firmware version 1.6. You can do this using the ledger live app. 
 
 Compile and load the app onto the device:
 ```bash
@@ -34,7 +36,13 @@ make delete
 
 ## Example of Ledger wallet functionality
 
-Test functionality:
+### Test functionality:
+Get Address
 ```bash
-python test_example.py --account_number 12345
+python test_getAddress.py --account_number 12345
+```
+
+Sign Transaction Data (One Ledger Network must be running one node here: http://127.0.0.1:26602)
+```bash
+python test_signRawTx.py
 ```
