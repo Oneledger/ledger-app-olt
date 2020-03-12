@@ -16,6 +16,16 @@ headers = {
     "Accept": "application/json",
 }
 
+tx_type_create = 0
+tx_type_send = 1
+
+class txCtx:
+    accountNum = ""
+    amount = {}
+    recipient = ""
+    sender = ""
+    fee = {}
+
 def rpc_call(method, params):
     payload = {
         "method": method,
@@ -55,6 +65,23 @@ def create_domain(name, owner_hex, price):
     resp = rpc_call('tx.ONS_CreateRawCreate', req)
     return resp["result"]["rawTx"]
 
+def send( fromAddr, toAddr, amount):
+    req = {
+        "from":fromAddr,
+        "to":toAddr,
+        "amount": {
+            "currency": "OLT",
+            "value": converBigInt(amount),
+        },
+        "gasprice": {
+            "currency": "OLT",
+            "value": "1000000000",
+        },
+        "gas": 40000,
+    }
+    resp = rpc_call('tx.CreateRawSend', req)
+    return resp["result"]["rawTx"]
+
 
 def broadcast_commit(rawTx, signature, pub_key):
     resp = rpc_call('broadcast.TxCommit', {
@@ -64,6 +91,22 @@ def broadcast_commit(rawTx, signature, pub_key):
     })
     print resp
     return resp["result"]
+
+def get_RawTx(txType):
+    if txType == tx_type_create:
+        create_price = (int("10023450")*10**14)
+        raw_txn = create_domain("kevin.ol", address, create_price)
+
+    if txType == tx_type_send:
+        amount = (int("10023450")*10**14)
+        raw_txn = send(address, address, amount)
+
+    #RPC layer base 64 encodes message before sending. Need to decode.
+    raw_txn_decoded =  base64.b64decode(raw_txn)
+
+    print "raw tx:", raw_txn_decoded
+    return raw_txn, raw_txn_decoded
+
 
 # INFO:
 # CLA=Class, INS=Instruction, P1=Parameter1, P2=Parameter2, Lc=Length of CDATA, CDATA=
@@ -94,10 +137,25 @@ def getAddress(account_num):
     return address, pubKey
 
 
-def signRawTx(rawTx, account_num):
-    apduMessage = "E003010000" + '{:04x}'.format((len(account_num) + len(rawTx)) / 2) + account_num + rawTx
+def signRawTx(rawTx, sendCtx):
+    #Convert Send Context object to strings:
+    amount_str = sendCtx.amount["currency"] + ": " + sendCtx.amount["value"]
+    amount = amount_str.encode('hex').ljust(64,'0')
+
+    recipient = sendCtx.recipient.encode('hex').ljust(128,'0')
+
+    fee = sendCtx.fee["value"].encode('hex').ljust(64,'0')
+
+    account_num = sendCtx.accountNum
+
+    #Create APDU message
+    apduMessage = "E003010100" + '{:04x}'.format((len(account_num) + (len(rawTx) + len(amount) + len(recipient) + len(fee)) / 2)) + account_num + rawTx + amount + recipient + fee
     apdu = bytearray.fromhex(apduMessage)
 
+    print 'length of apdu:'
+    print len(apdu)
+
+    #Send APDU Message
     dongle = getDongle(True)
     result = dongle.exchange(apdu)
 
@@ -121,20 +179,30 @@ if __name__ == "__main__":
     print("~~ OneLedger ~~")
     print("Sign Transaction")
 
-    # Get Raw Transaction
-    create_price = (int("10023450")*10**14)
-    raw_txn = create_domain("kevin.ol", address, create_price)
-    print "raw create domain tx:", base64.b64decode(raw_txn)
+    transCtx = txCtx()
 
-    #RPC layer base 64 encodes message before sending. Need to decode.
-    rawTx = base64.b64decode(raw_txn)
+    txType = tx_type_send
+
+    # Get Raw Transaction
+    raw_txn, rawTx_decoded = get_RawTx(txType)
+    rawTx_json = json.loads(rawTx_decoded)
+    print "rawTx:", rawTx_json
+    print
+    sendTx = json.loads( base64.b64decode(rawTx_json["data"]) )
+    print json.dumps(sendTx, indent=4)
+
+    transCtx.accountNum = account
+    transCtx.amount = sendTx["amount"]
+    transCtx.recipient = sendTx["to"]
+    transCtx.fee = rawTx_json["fee"]["price"]
+
 
     #Using SHA512 to prehash raw message before signing.
-    raw_hash = hashlib.sha512(rawTx).hexdigest()
+    raw_hash = hashlib.sha512(rawTx_decoded).hexdigest()
     print "raw hash of tx: ", raw_hash
 
     # Sign Raw Transaction
-    signature = signRawTx(raw_hash, account)
+    signature = signRawTx(raw_hash, transCtx)
     signature_str = ''.join(format(x, '02x') for x in signature)
     print "Signature: ", signature_str[2:]
 

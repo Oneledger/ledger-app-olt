@@ -44,7 +44,7 @@ UX_STEP_NOCB(
     ux_display_sign_recipient_step,
     bnnn_paging,
     {
-      .title = "Recipient Address",
+      .title = "Recipient Addr",
       .text = sendCtx.recipient,
     });
 UX_STEP_NOCB(
