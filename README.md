@@ -10,10 +10,10 @@ To build and install the app on your Ledger Nano S you must set up the Ledger Na
 
 .bashrc file must export the following paths (Make sure the path ends with a slash):
 ```bash
-export BOLOS_ENV=~/dev/bolos-dev/
-export BOLOS_SDK=~/dev/bolos-dev/nanos-secure-sdk/
-export GCCPATH=~/dev/bolos-dev/gcc-arm-none-eabi-5_3-2016q1/bin/
-export CLANGPATH=~/dev/bolos-dev/clang-arm-fropi/bin/
+export CLANGPATH=~/bolos/clang-arm-fropi/bin/
+export GCCPATH=~/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/
+export BOLOS_SDK=~/bolos/nanos-secure-sdk
+export BOLOS_ENV=~/bolos
 ```
 
 Update your Nano S device with the firmware version 1.6. You can do this using the ledger live app. 
