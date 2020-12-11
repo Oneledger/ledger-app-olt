@@ -220,7 +220,7 @@ Discarded input sections
  .text          0x00000000        0x0 obj/pic_internal.o
  .llvm_addrsig  0x00000000        0x1 obj/pic_internal.o
  .text          0x00000000        0x0 obj/signRawTx.o
- .llvm_addrsig  0x00000000       0x26 obj/signRawTx.o
+ .llvm_addrsig  0x00000000       0x36 obj/signRawTx.o
  .text          0x00000000        0x0 obj/syscalls.o
  .text.cx_rng_u8
                 0x00000000       0x18 obj/syscalls.o
@@ -1080,7 +1080,7 @@ END GROUP
                 0x00000200                STACK_SIZE = 0x200
                 0x20002800                END_STACK = (ORIGIN (SRAM) + LENGTH (SRAM))
 
-.text           0xc0d00000     0x5280
+.text           0xc0d00000     0x5340
                 0xc0d00000                _text = .
                 0xc0d00000                _nvram = .
                 [!provide]                PROVIDE (_setjmp, setjmp)
@@ -1234,836 +1234,857 @@ END GROUP
                 0xc0d018e8        0xc obj/signRawTx.o
                 0xc0d018e8                ux_display_sign_flow_3_step_validateinit
  .text.parseSignRawTxData
-                0xc0d018f4       0x2c obj/signRawTx.o
+                0xc0d018f4       0x6c obj/signRawTx.o
                 0xc0d018f4                parseSignRawTxData
  .text.handleSignRawTx
-                0xc0d01920       0x78 obj/signRawTx.o
-                0xc0d01920                handleSignRawTx
+                0xc0d01960       0xa0 obj/signRawTx.o
+                0xc0d01960                handleSignRawTx
  .text.SVC_Call
-                0xc0d01998        0x4 obj/syscalls.o
-                0xc0d01998                SVC_Call
+                0xc0d01a00        0x4 obj/syscalls.o
+                0xc0d01a00                SVC_Call
  .text.check_api_level
-                0xc0d0199c       0x18 obj/syscalls.o
-                0xc0d0199c                check_api_level
- .text.halt     0xc0d019b4       0x14 obj/syscalls.o
-                0xc0d019b4                halt
+                0xc0d01a04       0x18 obj/syscalls.o
+                0xc0d01a04                check_api_level
+ .text.halt     0xc0d01a1c       0x14 obj/syscalls.o
+                0xc0d01a1c                halt
  .text.nvm_write
-                0xc0d019c8       0x1c obj/syscalls.o
-                0xc0d019c8                nvm_write
- .text.cx_rng   0xc0d019e4       0x1c obj/syscalls.o
-                0xc0d019e4                cx_rng
+                0xc0d01a30       0x1c obj/syscalls.o
+                0xc0d01a30                nvm_write
+ .text.cx_rng   0xc0d01a4c       0x1c obj/syscalls.o
+                0xc0d01a4c                cx_rng
  .text.cx_hash_sha256
-                0xc0d01a00       0x20 obj/syscalls.o
-                0xc0d01a00                cx_hash_sha256
+                0xc0d01a68       0x20 obj/syscalls.o
+                0xc0d01a68                cx_hash_sha256
  .text.cx_ecfp_init_private_key
-                0xc0d01a20       0x20 obj/syscalls.o
-                0xc0d01a20                cx_ecfp_init_private_key
+                0xc0d01a88       0x20 obj/syscalls.o
+                0xc0d01a88                cx_ecfp_init_private_key
  .text.cx_ecfp_generate_pair
-                0xc0d01a40       0x20 obj/syscalls.o
-                0xc0d01a40                cx_ecfp_generate_pair
+                0xc0d01aa8       0x20 obj/syscalls.o
+                0xc0d01aa8                cx_ecfp_generate_pair
  .text.cx_eddsa_sign
-                0xc0d01a60       0x38 obj/syscalls.o
-                0xc0d01a60                cx_eddsa_sign
+                0xc0d01ac8       0x38 obj/syscalls.o
+                0xc0d01ac8                cx_eddsa_sign
  .text.cx_crc16_update
-                0xc0d01a98       0x20 obj/syscalls.o
-                0xc0d01a98                cx_crc16_update
+                0xc0d01b00       0x20 obj/syscalls.o
+                0xc0d01b00                cx_crc16_update
  .text.os_perso_isonboarded
-                0xc0d01ab8       0x18 obj/syscalls.o
-                0xc0d01ab8                os_perso_isonboarded
+                0xc0d01b20       0x18 obj/syscalls.o
+                0xc0d01b20                os_perso_isonboarded
  .text.os_perso_derive_node_with_seed_key
-                0xc0d01ad0       0x2c obj/syscalls.o
-                0xc0d01ad0                os_perso_derive_node_with_seed_key
+                0xc0d01b38       0x2c obj/syscalls.o
+                0xc0d01b38                os_perso_derive_node_with_seed_key
  .text.os_perso_seed_cookie
-                0xc0d01afc       0x1c obj/syscalls.o
-                0xc0d01afc                os_perso_seed_cookie
+                0xc0d01b64       0x1c obj/syscalls.o
+                0xc0d01b64                os_perso_seed_cookie
  .text.os_global_pin_is_validated
-                0xc0d01b18       0x18 obj/syscalls.o
-                0xc0d01b18                os_global_pin_is_validated
- .text.os_ux    0xc0d01b30       0x18 obj/syscalls.o
-                0xc0d01b30                os_ux
+                0xc0d01b80       0x18 obj/syscalls.o
+                0xc0d01b80                os_global_pin_is_validated
+ .text.os_ux    0xc0d01b98       0x18 obj/syscalls.o
+                0xc0d01b98                os_ux
  .text.os_flags
-                0xc0d01b48       0x18 obj/syscalls.o
-                0xc0d01b48                os_flags
+                0xc0d01bb0       0x18 obj/syscalls.o
+                0xc0d01bb0                os_flags
  .text.os_registry_get_current_app_tag
-                0xc0d01b60       0x1c obj/syscalls.o
-                0xc0d01b60                os_registry_get_current_app_tag
+                0xc0d01bc8       0x1c obj/syscalls.o
+                0xc0d01bc8                os_registry_get_current_app_tag
  .text.os_sched_exit
-                0xc0d01b7c       0x18 obj/syscalls.o
-                0xc0d01b7c                os_sched_exit
- .text.io_seph_send
-                0xc0d01b94       0x18 obj/syscalls.o
-                0xc0d01b94                io_seph_send
- .text.io_seph_is_status_sent
-                0xc0d01bac       0x18 obj/syscalls.o
-                0xc0d01bac                io_seph_is_status_sent
- .text.io_seph_recv
-                0xc0d01bc4       0x20 obj/syscalls.o
-                0xc0d01bc4                io_seph_recv
- .text.try_context_get
                 0xc0d01be4       0x18 obj/syscalls.o
-                0xc0d01be4                try_context_get
- .text.try_context_set
+                0xc0d01be4                os_sched_exit
+ .text.io_seph_send
                 0xc0d01bfc       0x18 obj/syscalls.o
-                0xc0d01bfc                try_context_set
+                0xc0d01bfc                io_seph_send
+ .text.io_seph_is_status_sent
+                0xc0d01c14       0x18 obj/syscalls.o
+                0xc0d01c14                io_seph_is_status_sent
+ .text.io_seph_recv
+                0xc0d01c2c       0x20 obj/syscalls.o
+                0xc0d01c2c                io_seph_recv
+ .text.try_context_get
+                0xc0d01c4c       0x18 obj/syscalls.o
+                0xc0d01c4c                try_context_get
+ .text.try_context_set
+                0xc0d01c64       0x18 obj/syscalls.o
+                0xc0d01c64                try_context_set
  .text.os_sched_last_status
-                0xc0d01c14       0x1c obj/syscalls.o
-                0xc0d01c14                os_sched_last_status
+                0xc0d01c7c       0x1c obj/syscalls.o
+                0xc0d01c7c                os_sched_last_status
  .text.u2f_apdu_sign
-                0xc0d01c30      0x100 obj/u2f_impl.o
-                0xc0d01c30                u2f_apdu_sign
+                0xc0d01c98      0x100 obj/u2f_impl.o
+                0xc0d01c98                u2f_apdu_sign
  .text.u2f_handle_cmd_init
-                0xc0d01d30       0xa0 obj/u2f_impl.o
-                0xc0d01d30                u2f_handle_cmd_init
+                0xc0d01d98       0xa0 obj/u2f_impl.o
+                0xc0d01d98                u2f_handle_cmd_init
  .text.u2f_handle_cmd_msg
-                0xc0d01dd0       0xbc obj/u2f_impl.o
-                0xc0d01dd0                u2f_handle_cmd_msg
+                0xc0d01e38       0xbc obj/u2f_impl.o
+                0xc0d01e38                u2f_handle_cmd_msg
  .text.u2f_message_complete
-                0xc0d01e8c       0x3c obj/u2f_impl.o
-                0xc0d01e8c                u2f_message_complete
+                0xc0d01ef4       0x3c obj/u2f_impl.o
+                0xc0d01ef4                u2f_message_complete
  .text.u2f_io_send
-                0xc0d01ec8       0x34 obj/u2f_io.o
-                0xc0d01ec8                u2f_io_send
+                0xc0d01f30       0x34 obj/u2f_io.o
+                0xc0d01f30                u2f_io_send
  .text.u2f_transport_init
-                0xc0d01efc       0x14 obj/u2f_transport.o
-                0xc0d01efc                u2f_transport_init
+                0xc0d01f64       0x14 obj/u2f_transport.o
+                0xc0d01f64                u2f_transport_init
  .text.u2f_transport_sent
-                0xc0d01f10      0x118 obj/u2f_transport.o
-                0xc0d01f10                u2f_transport_sent
+                0xc0d01f78      0x118 obj/u2f_transport.o
+                0xc0d01f78                u2f_transport_sent
  .text.u2f_message_repliable
-                0xc0d02028       0x2a obj/u2f_transport.o
-                0xc0d02028                u2f_message_repliable
- *fill*         0xc0d02052        0x2 00
+                0xc0d02090       0x2a obj/u2f_transport.o
+                0xc0d02090                u2f_message_repliable
+ *fill*         0xc0d020ba        0x2 00
  .text.u2f_transport_send_usb_user_presence_required
-                0xc0d02054       0x3c obj/u2f_transport.o
-                0xc0d02054                u2f_transport_send_usb_user_presence_required
+                0xc0d020bc       0x3c obj/u2f_transport.o
+                0xc0d020bc                u2f_transport_send_usb_user_presence_required
  .text.u2f_transport_send_wink
-                0xc0d02090       0x30 obj/u2f_transport.o
-                0xc0d02090                u2f_transport_send_wink
+                0xc0d020f8       0x30 obj/u2f_transport.o
+                0xc0d020f8                u2f_transport_send_wink
  .text.u2f_transport_receive_fakeChannel
-                0xc0d020c0      0x100 obj/u2f_transport.o
-                0xc0d020c0                u2f_transport_receive_fakeChannel
+                0xc0d02128      0x100 obj/u2f_transport.o
+                0xc0d02128                u2f_transport_receive_fakeChannel
  .text.u2f_transport_received
-                0xc0d021c0      0x3a0 obj/u2f_transport.o
-                0xc0d021c0                u2f_transport_received
+                0xc0d02228      0x3a0 obj/u2f_transport.o
+                0xc0d02228                u2f_transport_received
  .text.u2f_is_channel_broadcast
-                0xc0d02560       0x18 obj/u2f_transport.o
-                0xc0d02560                u2f_is_channel_broadcast
+                0xc0d025c8       0x18 obj/u2f_transport.o
+                0xc0d025c8                u2f_is_channel_broadcast
  .text.u2f_message_set_autoreply_wait_user_presence
-                0xc0d02578       0x26 obj/u2f_transport.o
-                0xc0d02578                u2f_message_set_autoreply_wait_user_presence
- *fill*         0xc0d0259e        0x2 00
+                0xc0d025e0       0x26 obj/u2f_transport.o
+                0xc0d025e0                u2f_message_set_autoreply_wait_user_presence
+ *fill*         0xc0d02606        0x2 00
  .text.u2f_message_reply
-                0xc0d025a0       0x68 obj/u2f_transport.o
-                0xc0d025a0                u2f_message_reply
+                0xc0d02608       0x68 obj/u2f_transport.o
+                0xc0d02608                u2f_message_reply
  .text.USBD_LL_Init
-                0xc0d02608       0x14 obj/usbd_conf.o
-                0xc0d02608                USBD_LL_Init
+                0xc0d02670       0x14 obj/usbd_conf.o
+                0xc0d02670                USBD_LL_Init
  .text.USBD_LL_DeInit
-                0xc0d0261c       0x24 obj/usbd_conf.o
-                0xc0d0261c                USBD_LL_DeInit
+                0xc0d02684       0x24 obj/usbd_conf.o
+                0xc0d02684                USBD_LL_DeInit
  .text.USBD_LL_Start
-                0xc0d02640       0x38 obj/usbd_conf.o
-                0xc0d02640                USBD_LL_Start
+                0xc0d026a8       0x38 obj/usbd_conf.o
+                0xc0d026a8                USBD_LL_Start
  .text.USBD_LL_Stop
-                0xc0d02678       0x22 obj/usbd_conf.o
-                0xc0d02678                USBD_LL_Stop
- *fill*         0xc0d0269a        0x2 00
+                0xc0d026e0       0x22 obj/usbd_conf.o
+                0xc0d026e0                USBD_LL_Stop
+ *fill*         0xc0d02702        0x2 00
  .text.USBD_LL_OpenEP
-                0xc0d0269c       0x60 obj/usbd_conf.o
-                0xc0d0269c                USBD_LL_OpenEP
+                0xc0d02704       0x60 obj/usbd_conf.o
+                0xc0d02704                USBD_LL_OpenEP
  .text.USBD_LL_CloseEP
-                0xc0d026fc       0x2c obj/usbd_conf.o
-                0xc0d026fc                USBD_LL_CloseEP
+                0xc0d02764       0x2c obj/usbd_conf.o
+                0xc0d02764                USBD_LL_CloseEP
  .text.USBD_LL_StallEP
-                0xc0d02728       0x48 obj/usbd_conf.o
-                0xc0d02728                USBD_LL_StallEP
+                0xc0d02790       0x48 obj/usbd_conf.o
+                0xc0d02790                USBD_LL_StallEP
  .text.USBD_LL_ClearStallEP
-                0xc0d02770       0x48 obj/usbd_conf.o
-                0xc0d02770                USBD_LL_ClearStallEP
+                0xc0d027d8       0x48 obj/usbd_conf.o
+                0xc0d027d8                USBD_LL_ClearStallEP
  .text.USBD_LL_IsStallEP
-                0xc0d027b8       0x20 obj/usbd_conf.o
-                0xc0d027b8                USBD_LL_IsStallEP
+                0xc0d02820       0x20 obj/usbd_conf.o
+                0xc0d02820                USBD_LL_IsStallEP
  .text.USBD_LL_SetUSBAddress
-                0xc0d027d8       0x24 obj/usbd_conf.o
-                0xc0d027d8                USBD_LL_SetUSBAddress
+                0xc0d02840       0x24 obj/usbd_conf.o
+                0xc0d02840                USBD_LL_SetUSBAddress
  .text.USBD_LL_Transmit
-                0xc0d027fc       0x32 obj/usbd_conf.o
-                0xc0d027fc                USBD_LL_Transmit
+                0xc0d02864       0x32 obj/usbd_conf.o
+                0xc0d02864                USBD_LL_Transmit
  .text.USBD_LL_PrepareReceive
-                0xc0d0282e       0x26 obj/usbd_conf.o
-                0xc0d0282e                USBD_LL_PrepareReceive
+                0xc0d02896       0x26 obj/usbd_conf.o
+                0xc0d02896                USBD_LL_PrepareReceive
  .text.USBD_Init
-                0xc0d02854       0x32 obj/usbd_core.o
-                0xc0d02854                USBD_Init
+                0xc0d028bc       0x32 obj/usbd_core.o
+                0xc0d028bc                USBD_Init
  .text.USBD_DeInit
-                0xc0d02886       0x3c obj/usbd_core.o
-                0xc0d02886                USBD_DeInit
+                0xc0d028ee       0x3c obj/usbd_core.o
+                0xc0d028ee                USBD_DeInit
  .text.USBD_RegisterClassForInterface
-                0xc0d028c2       0x1a obj/usbd_core.o
-                0xc0d028c2                USBD_RegisterClassForInterface
+                0xc0d0292a       0x1a obj/usbd_core.o
+                0xc0d0292a                USBD_RegisterClassForInterface
  .text.USBD_Start
-                0xc0d028dc        0xa obj/usbd_core.o
-                0xc0d028dc                USBD_Start
+                0xc0d02944        0xa obj/usbd_core.o
+                0xc0d02944                USBD_Start
  .text.USBD_SetClassConfig
-                0xc0d028e6       0x36 obj/usbd_core.o
-                0xc0d028e6                USBD_SetClassConfig
+                0xc0d0294e       0x36 obj/usbd_core.o
+                0xc0d0294e                USBD_SetClassConfig
  .text.USBD_ClrClassConfig
-                0xc0d0291c       0x36 obj/usbd_core.o
-                0xc0d0291c                USBD_ClrClassConfig
+                0xc0d02984       0x36 obj/usbd_core.o
+                0xc0d02984                USBD_ClrClassConfig
  .text.USBD_LL_SetupStage
-                0xc0d02952       0x5c obj/usbd_core.o
-                0xc0d02952                USBD_LL_SetupStage
+                0xc0d029ba       0x5c obj/usbd_core.o
+                0xc0d029ba                USBD_LL_SetupStage
  .text.USBD_LL_DataOutStage
-                0xc0d029ae       0xb0 obj/usbd_core.o
-                0xc0d029ae                USBD_LL_DataOutStage
+                0xc0d02a16       0xb0 obj/usbd_core.o
+                0xc0d02a16                USBD_LL_DataOutStage
  .text.USBD_LL_DataInStage
-                0xc0d02a5e       0xe8 obj/usbd_core.o
-                0xc0d02a5e                USBD_LL_DataInStage
+                0xc0d02ac6       0xe8 obj/usbd_core.o
+                0xc0d02ac6                USBD_LL_DataInStage
  .text.USBD_LL_Reset
-                0xc0d02b46       0x3e obj/usbd_core.o
-                0xc0d02b46                USBD_LL_Reset
+                0xc0d02bae       0x3e obj/usbd_core.o
+                0xc0d02bae                USBD_LL_Reset
  .text.USBD_LL_SetSpeed
-                0xc0d02b84        0x6 obj/usbd_core.o
-                0xc0d02b84                USBD_LL_SetSpeed
+                0xc0d02bec        0x6 obj/usbd_core.o
+                0xc0d02bec                USBD_LL_SetSpeed
  .text.USBD_LL_Suspend
-                0xc0d02b8a        0x4 obj/usbd_core.o
-                0xc0d02b8a                USBD_LL_Suspend
+                0xc0d02bf2        0x4 obj/usbd_core.o
+                0xc0d02bf2                USBD_LL_Suspend
  .text.USBD_LL_Resume
-                0xc0d02b8e        0x4 obj/usbd_core.o
-                0xc0d02b8e                USBD_LL_Resume
+                0xc0d02bf6        0x4 obj/usbd_core.o
+                0xc0d02bf6                USBD_LL_Resume
  .text.USBD_LL_SOF
-                0xc0d02b92       0x3a obj/usbd_core.o
-                0xc0d02b92                USBD_LL_SOF
+                0xc0d02bfa       0x3a obj/usbd_core.o
+                0xc0d02bfa                USBD_LL_SOF
  .text.usbd_is_valid_intf
-                0xc0d02bcc       0x1a obj/usbd_ctlreq.o
-                0xc0d02bcc                usbd_is_valid_intf
+                0xc0d02c34       0x1a obj/usbd_ctlreq.o
+                0xc0d02c34                usbd_is_valid_intf
  .text.USBD_StdDevReq
-                0xc0d02be6       0x5a obj/usbd_ctlreq.o
-                0xc0d02be6                USBD_StdDevReq
+                0xc0d02c4e       0x5a obj/usbd_ctlreq.o
+                0xc0d02c4e                USBD_StdDevReq
  .text.USBD_GetDescriptor
-                0xc0d02c40      0x10c obj/usbd_ctlreq.o
-                0xc0d02c40                USBD_GetDescriptor
+                0xc0d02ca8      0x10c obj/usbd_ctlreq.o
+                0xc0d02ca8                USBD_GetDescriptor
  .text.USBD_SetAddress
-                0xc0d02d4c       0x4c obj/usbd_ctlreq.o
-                0xc0d02d4c                USBD_SetAddress
+                0xc0d02db4       0x4c obj/usbd_ctlreq.o
+                0xc0d02db4                USBD_SetAddress
  .text.USBD_SetConfig
-                0xc0d02d98       0x6e obj/usbd_ctlreq.o
-                0xc0d02d98                USBD_SetConfig
+                0xc0d02e00       0x6e obj/usbd_ctlreq.o
+                0xc0d02e00                USBD_SetConfig
  .text.USBD_GetConfig
-                0xc0d02e06       0x2e obj/usbd_ctlreq.o
-                0xc0d02e06                USBD_GetConfig
+                0xc0d02e6e       0x2e obj/usbd_ctlreq.o
+                0xc0d02e6e                USBD_GetConfig
  .text.USBD_GetStatus
-                0xc0d02e34       0x44 obj/usbd_ctlreq.o
-                0xc0d02e34                USBD_GetStatus
+                0xc0d02e9c       0x44 obj/usbd_ctlreq.o
+                0xc0d02e9c                USBD_GetStatus
  .text.USBD_SetFeature
-                0xc0d02e78       0x3a obj/usbd_ctlreq.o
-                0xc0d02e78                USBD_SetFeature
+                0xc0d02ee0       0x3a obj/usbd_ctlreq.o
+                0xc0d02ee0                USBD_SetFeature
  .text.USBD_ClrFeature
-                0xc0d02eb2       0x50 obj/usbd_ctlreq.o
-                0xc0d02eb2                USBD_ClrFeature
+                0xc0d02f1a       0x50 obj/usbd_ctlreq.o
+                0xc0d02f1a                USBD_ClrFeature
  .text.USBD_StdItfReq
-                0xc0d02f02       0x48 obj/usbd_ctlreq.o
-                0xc0d02f02                USBD_StdItfReq
+                0xc0d02f6a       0x48 obj/usbd_ctlreq.o
+                0xc0d02f6a                USBD_StdItfReq
  .text.USBD_StdEPReq
-                0xc0d02f4a      0x108 obj/usbd_ctlreq.o
-                0xc0d02f4a                USBD_StdEPReq
+                0xc0d02fb2      0x108 obj/usbd_ctlreq.o
+                0xc0d02fb2                USBD_StdEPReq
  .text.USBD_ParseSetupRequest
-                0xc0d03052       0x28 obj/usbd_ctlreq.o
-                0xc0d03052                USBD_ParseSetupRequest
+                0xc0d030ba       0x28 obj/usbd_ctlreq.o
+                0xc0d030ba                USBD_ParseSetupRequest
  .text.USBD_CtlStall
-                0xc0d0307a       0x14 obj/usbd_ctlreq.o
-                0xc0d0307a                USBD_CtlStall
+                0xc0d030e2       0x14 obj/usbd_ctlreq.o
+                0xc0d030e2                USBD_CtlStall
  .text.USBD_HID_Setup
-                0xc0d0308e       0x96 obj/usbd_hid.o
-                0xc0d0308e                USBD_HID_Setup
+                0xc0d030f6       0x96 obj/usbd_hid.o
+                0xc0d030f6                USBD_HID_Setup
  .text.USBD_HID_Init
-                0xc0d03124       0x32 obj/usbd_hid.o
-                0xc0d03124                USBD_HID_Init
+                0xc0d0318c       0x32 obj/usbd_hid.o
+                0xc0d0318c                USBD_HID_Init
  .text.USBD_HID_DeInit
-                0xc0d03156       0x16 obj/usbd_hid.o
-                0xc0d03156                USBD_HID_DeInit
+                0xc0d031be       0x16 obj/usbd_hid.o
+                0xc0d031be                USBD_HID_DeInit
  .text.USBD_HID_GetHidDescriptor_impl
-                0xc0d0316c       0x34 obj/usbd_impl.o
-                0xc0d0316c                USBD_HID_GetHidDescriptor_impl
+                0xc0d031d4       0x34 obj/usbd_impl.o
+                0xc0d031d4                USBD_HID_GetHidDescriptor_impl
  .text.USBD_HID_GetReportDescriptor_impl
-                0xc0d031a0       0x64 obj/usbd_impl.o
-                0xc0d031a0                USBD_HID_GetReportDescriptor_impl
+                0xc0d03208       0x64 obj/usbd_impl.o
+                0xc0d03208                USBD_HID_GetReportDescriptor_impl
  .text.USBD_U2F_Init
-                0xc0d03204       0x32 obj/usbd_impl.o
-                0xc0d03204                USBD_U2F_Init
- *fill*         0xc0d03236        0x2 00
+                0xc0d0326c       0x32 obj/usbd_impl.o
+                0xc0d0326c                USBD_U2F_Init
+ *fill*         0xc0d0329e        0x2 00
  .text.USBD_U2F_DataIn_impl
-                0xc0d03238       0x18 obj/usbd_impl.o
-                0xc0d03238                USBD_U2F_DataIn_impl
+                0xc0d032a0       0x18 obj/usbd_impl.o
+                0xc0d032a0                USBD_U2F_DataIn_impl
  .text.USBD_U2F_DataOut_impl
-                0xc0d03250       0x2c obj/usbd_impl.o
-                0xc0d03250                USBD_U2F_DataOut_impl
+                0xc0d032b8       0x2c obj/usbd_impl.o
+                0xc0d032b8                USBD_U2F_DataOut_impl
  .text.USBD_HID_DataIn_impl
-                0xc0d0327c       0x18 obj/usbd_impl.o
-                0xc0d0327c                USBD_HID_DataIn_impl
+                0xc0d032e4       0x18 obj/usbd_impl.o
+                0xc0d032e4                USBD_HID_DataIn_impl
  .text.USBD_HID_DataOut_impl
-                0xc0d03294       0x4c obj/usbd_impl.o
-                0xc0d03294                USBD_HID_DataOut_impl
+                0xc0d032fc       0x4c obj/usbd_impl.o
+                0xc0d032fc                USBD_HID_DataOut_impl
  .text.USBD_WEBUSB_Init
-                0xc0d032e0       0x2c obj/usbd_impl.o
-                0xc0d032e0                USBD_WEBUSB_Init
+                0xc0d03348       0x2c obj/usbd_impl.o
+                0xc0d03348                USBD_WEBUSB_Init
  .text.USBD_WEBUSB_DeInit
-                0xc0d0330c        0x4 obj/usbd_impl.o
-                0xc0d0330c                USBD_WEBUSB_DeInit
+                0xc0d03374        0x4 obj/usbd_impl.o
+                0xc0d03374                USBD_WEBUSB_DeInit
  .text.USBD_WEBUSB_Setup
-                0xc0d03310        0x4 obj/usbd_impl.o
-                0xc0d03310                USBD_WEBUSB_Setup
+                0xc0d03378        0x4 obj/usbd_impl.o
+                0xc0d03378                USBD_WEBUSB_Setup
  .text.USBD_WEBUSB_DataIn
-                0xc0d03314       0x18 obj/usbd_impl.o
-                0xc0d03314                USBD_WEBUSB_DataIn
+                0xc0d0337c       0x18 obj/usbd_impl.o
+                0xc0d0337c                USBD_WEBUSB_DataIn
  .text.USBD_WEBUSB_DataOut
-                0xc0d0332c       0x4c obj/usbd_impl.o
-                0xc0d0332c                USBD_WEBUSB_DataOut
+                0xc0d03394       0x4c obj/usbd_impl.o
+                0xc0d03394                USBD_WEBUSB_DataOut
  .text.USBD_DeviceDescriptor
-                0xc0d03378       0x10 obj/usbd_impl.o
+                0xc0d033e0       0x10 obj/usbd_impl.o
  .text.USBD_LangIDStrDescriptor
-                0xc0d03388       0x10 obj/usbd_impl.o
+                0xc0d033f0       0x10 obj/usbd_impl.o
  .text.USBD_ManufacturerStrDescriptor
-                0xc0d03398       0x10 obj/usbd_impl.o
+                0xc0d03400       0x10 obj/usbd_impl.o
  .text.USBD_ProductStrDescriptor
-                0xc0d033a8       0x10 obj/usbd_impl.o
+                0xc0d03410       0x10 obj/usbd_impl.o
  .text.USBD_SerialStrDescriptor
-                0xc0d033b8       0x10 obj/usbd_impl.o
+                0xc0d03420       0x10 obj/usbd_impl.o
  .text.USBD_ConfigStrDescriptor
-                0xc0d033c8       0x10 obj/usbd_impl.o
+                0xc0d03430       0x10 obj/usbd_impl.o
  .text.USBD_InterfaceStrDescriptor
-                0xc0d033d8       0x10 obj/usbd_impl.o
+                0xc0d03440       0x10 obj/usbd_impl.o
  .text.USBD_BOSDescriptor
-                0xc0d033e8       0x10 obj/usbd_impl.o
+                0xc0d03450       0x10 obj/usbd_impl.o
  .text.USBD_CtlError
-                0xc0d033f8       0xc0 obj/usbd_impl.o
-                0xc0d033f8                USBD_CtlError
+                0xc0d03460       0xc0 obj/usbd_impl.o
+                0xc0d03460                USBD_CtlError
  .text.USB_power
-                0xc0d034b8       0xbc obj/usbd_impl.o
-                0xc0d034b8                USB_power
+                0xc0d03520       0xbc obj/usbd_impl.o
+                0xc0d03520                USB_power
  .text.USBD_GetCfgDesc_impl
-                0xc0d03574       0x10 obj/usbd_impl.o
+                0xc0d035dc       0x10 obj/usbd_impl.o
  .text.USBD_GetDeviceQualifierDesc_impl
-                0xc0d03584       0x10 obj/usbd_impl.o
+                0xc0d035ec       0x10 obj/usbd_impl.o
  .text.USBD_CtlSendData
-                0xc0d03594       0x2c obj/usbd_ioreq.o
-                0xc0d03594                USBD_CtlSendData
+                0xc0d035fc       0x2c obj/usbd_ioreq.o
+                0xc0d035fc                USBD_CtlSendData
  .text.USBD_CtlContinueSendData
-                0xc0d035c0       0x1c obj/usbd_ioreq.o
-                0xc0d035c0                USBD_CtlContinueSendData
+                0xc0d03628       0x1c obj/usbd_ioreq.o
+                0xc0d03628                USBD_CtlContinueSendData
  .text.USBD_CtlContinueRx
-                0xc0d035dc        0xe obj/usbd_ioreq.o
-                0xc0d035dc                USBD_CtlContinueRx
+                0xc0d03644        0xe obj/usbd_ioreq.o
+                0xc0d03644                USBD_CtlContinueRx
  .text.USBD_CtlSendStatus
-                0xc0d035ea       0x18 obj/usbd_ioreq.o
-                0xc0d035ea                USBD_CtlSendStatus
+                0xc0d03652       0x18 obj/usbd_ioreq.o
+                0xc0d03652                USBD_CtlSendStatus
  .text.USBD_CtlReceiveStatus
-                0xc0d03602       0x16 obj/usbd_ioreq.o
-                0xc0d03602                USBD_CtlReceiveStatus
- .text.btox     0xc0d03618       0x34 obj/utils.o
-                0xc0d03618                btox
+                0xc0d0366a       0x16 obj/usbd_ioreq.o
+                0xc0d0366a                USBD_CtlReceiveStatus
+ .text.btox     0xc0d03680       0x34 obj/utils.o
+                0xc0d03680                btox
  .text.getAddressStringFromBinary
-                0xc0d0364c       0x58 obj/utils.o
-                0xc0d0364c                getAddressStringFromBinary
+                0xc0d036b4       0x58 obj/utils.o
+                0xc0d036b4                getAddressStringFromBinary
  .text.getPublicKey
-                0xc0d036a4       0x4e obj/utils.o
-                0xc0d036a4                getPublicKey
- *fill*         0xc0d036f2        0x2 00
+                0xc0d0370c       0x4e obj/utils.o
+                0xc0d0370c                getPublicKey
+ *fill*         0xc0d0375a        0x2 00
  .text.getPrivateKey
-                0xc0d036f4       0x58 obj/utils.o
-                0xc0d036f4                getPrivateKey
+                0xc0d0375c       0x58 obj/utils.o
+                0xc0d0375c                getPrivateKey
  .text.readUint32BE
-                0xc0d0374c       0x16 obj/utils.o
-                0xc0d0374c                readUint32BE
- *fill*         0xc0d03762        0x2 00
+                0xc0d037b4       0x16 obj/utils.o
+                0xc0d037b4                readUint32BE
+ *fill*         0xc0d037ca        0x2 00
  .text.sendResponse
-                0xc0d03764       0x38 obj/utils.o
-                0xc0d03764                sendResponse
+                0xc0d037cc       0x38 obj/utils.o
+                0xc0d037cc                sendResponse
  .text.parseAPDU
-                0xc0d0379c       0x28 obj/utils.o
-                0xc0d0379c                parseAPDU
+                0xc0d03804       0x28 obj/utils.o
+                0xc0d03804                parseAPDU
  .text.ux_flow_is_first
-                0xc0d037c4       0x50 obj/ux_flow_engine.o
-                0xc0d037c4                ux_flow_is_first
+                0xc0d0382c       0x50 obj/ux_flow_engine.o
+                0xc0d0382c                ux_flow_is_first
  .text.ux_flow_is_last
-                0xc0d03814       0x40 obj/ux_flow_engine.o
-                0xc0d03814                ux_flow_is_last
+                0xc0d0387c       0x40 obj/ux_flow_engine.o
+                0xc0d0387c                ux_flow_is_last
  .text.ux_flow_direction
-                0xc0d03854       0x28 obj/ux_flow_engine.o
-                0xc0d03854                ux_flow_direction
+                0xc0d038bc       0x28 obj/ux_flow_engine.o
+                0xc0d038bc                ux_flow_direction
  .text.ux_flow_next_internal
-                0xc0d0387c       0x64 obj/ux_flow_engine.o
+                0xc0d038e4       0x64 obj/ux_flow_engine.o
  .text.ux_flow_next
-                0xc0d038e0        0xa obj/ux_flow_engine.o
-                0xc0d038e0                ux_flow_next
- *fill*         0xc0d038ea        0x2 00
+                0xc0d03948        0xa obj/ux_flow_engine.o
+                0xc0d03948                ux_flow_next
+ *fill*         0xc0d03952        0x2 00
  .text.ux_flow_prev
-                0xc0d038ec       0x64 obj/ux_flow_engine.o
-                0xc0d038ec                ux_flow_prev
+                0xc0d03954       0x64 obj/ux_flow_engine.o
+                0xc0d03954                ux_flow_prev
  .text.ux_flow_engine_init_step
-                0xc0d03950       0x78 obj/ux_flow_engine.o
+                0xc0d039b8       0x78 obj/ux_flow_engine.o
  .text.ux_flow_validate
-                0xc0d039c8       0xb0 obj/ux_flow_engine.o
-                0xc0d039c8                ux_flow_validate
+                0xc0d03a30       0xb0 obj/ux_flow_engine.o
+                0xc0d03a30                ux_flow_validate
  .text.ux_flow_init
-                0xc0d03a78       0x94 obj/ux_flow_engine.o
-                0xc0d03a78                ux_flow_init
+                0xc0d03ae0       0x94 obj/ux_flow_engine.o
+                0xc0d03ae0                ux_flow_init
  .text.ux_flow_button_callback
-                0xc0d03b0c       0x38 obj/ux_flow_engine.o
-                0xc0d03b0c                ux_flow_button_callback
+                0xc0d03b74       0x38 obj/ux_flow_engine.o
+                0xc0d03b74                ux_flow_button_callback
  .text.ux_stack_get_step_params
-                0xc0d03b44       0x30 obj/ux_flow_engine.o
-                0xc0d03b44                ux_stack_get_step_params
+                0xc0d03bac       0x30 obj/ux_flow_engine.o
+                0xc0d03bac                ux_stack_get_step_params
  .text.ux_stack_get_current_step_params
-                0xc0d03b74       0x14 obj/ux_flow_engine.o
-                0xc0d03b74                ux_stack_get_current_step_params
+                0xc0d03bdc       0x14 obj/ux_flow_engine.o
+                0xc0d03bdc                ux_stack_get_current_step_params
  .text.ux_layout_bb_init_common
-                0xc0d03b88       0x3c obj/ux_layout_bb.o
-                0xc0d03b88                ux_layout_bb_init_common
+                0xc0d03bf0       0x3c obj/ux_layout_bb.o
+                0xc0d03bf0                ux_layout_bb_init_common
  .text.ux_layout_bn_prepro
-                0xc0d03bc4       0x24 obj/ux_layout_bn.o
-                0xc0d03bc4                ux_layout_bn_prepro
+                0xc0d03c2c       0x24 obj/ux_layout_bn.o
+                0xc0d03c2c                ux_layout_bn_prepro
  .text.ux_layout_bn_init
-                0xc0d03be8       0x28 obj/ux_layout_bn.o
-                0xc0d03be8                ux_layout_bn_init
+                0xc0d03c50       0x28 obj/ux_layout_bn.o
+                0xc0d03c50                ux_layout_bn_init
  .text.ux_layout_nnbnn_prepro
-                0xc0d03c10       0x54 obj/ux_layout_nnbnn.o
-                0xc0d03c10                ux_layout_nnbnn_prepro
+                0xc0d03c78       0x54 obj/ux_layout_nnbnn.o
+                0xc0d03c78                ux_layout_nnbnn_prepro
  .text.ux_layout_nnbnn_init
-                0xc0d03c64       0x4c obj/ux_layout_nnbnn.o
-                0xc0d03c64                ux_layout_nnbnn_init
+                0xc0d03ccc       0x4c obj/ux_layout_nnbnn.o
+                0xc0d03ccc                ux_layout_nnbnn_init
  .text.ux_layout_paging_compute
-                0xc0d03cb0      0x128 obj/ux_layout_paging.o
-                0xc0d03cb0                ux_layout_paging_compute
+                0xc0d03d18      0x128 obj/ux_layout_paging.o
+                0xc0d03d18                ux_layout_paging_compute
  .text.ux_layout_paging_redisplay
-                0xc0d03dd8       0x3c obj/ux_layout_paging.o
-                0xc0d03dd8                ux_layout_paging_redisplay
+                0xc0d03e40       0x3c obj/ux_layout_paging.o
+                0xc0d03e40                ux_layout_paging_redisplay
  .text.ux_layout_paging_prepro
-                0xc0d03e14      0x100 obj/ux_layout_paging.o
+                0xc0d03e7c      0x100 obj/ux_layout_paging.o
  .text.ux_layout_paging_button_callback
-                0xc0d03f14       0x70 obj/ux_layout_paging.o
+                0xc0d03f7c       0x70 obj/ux_layout_paging.o
  .text.ux_layout_paging_init
-                0xc0d03f84       0x88 obj/ux_layout_paging.o
-                0xc0d03f84                ux_layout_paging_init
+                0xc0d03fec       0x88 obj/ux_layout_paging.o
+                0xc0d03fec                ux_layout_paging_init
  .text.ux_layout_pb_prepro
-                0xc0d0400c       0x58 obj/ux_layout_pb.o
-                0xc0d0400c                ux_layout_pb_prepro
+                0xc0d04074       0x58 obj/ux_layout_pb.o
+                0xc0d04074                ux_layout_pb_prepro
  .text.ux_layout_pb_init
-                0xc0d04064       0x4c obj/ux_layout_pb.o
-                0xc0d04064                ux_layout_pb_init
+                0xc0d040cc       0x4c obj/ux_layout_pb.o
+                0xc0d040cc                ux_layout_pb_init
  .text.ux_layout_pbb_prepro
-                0xc0d040b0       0x68 obj/ux_layout_pbb.o
-                0xc0d040b0                ux_layout_pbb_prepro
+                0xc0d04118       0x68 obj/ux_layout_pbb.o
+                0xc0d04118                ux_layout_pbb_prepro
  .text.ux_layout_pbb_init_common
-                0xc0d04118       0x3c obj/ux_layout_pbb.o
-                0xc0d04118                ux_layout_pbb_init_common
+                0xc0d04180       0x3c obj/ux_layout_pbb.o
+                0xc0d04180                ux_layout_pbb_init_common
  .text.ux_layout_pnn_prepro
-                0xc0d04154       0x20 obj/ux_layout_pnn.o
-                0xc0d04154                ux_layout_pnn_prepro
+                0xc0d041bc       0x20 obj/ux_layout_pnn.o
+                0xc0d041bc                ux_layout_pnn_prepro
  .text.ux_layout_pnn_init
-                0xc0d04174       0x28 obj/ux_layout_pnn.o
-                0xc0d04174                ux_layout_pnn_init
+                0xc0d041dc       0x28 obj/ux_layout_pnn.o
+                0xc0d041dc                ux_layout_pnn_init
  .text.ux_layout_strings_prepro
-                0xc0d0419c       0x58 obj/ux_layout_utils.o
-                0xc0d0419c                ux_layout_strings_prepro
+                0xc0d04204       0x58 obj/ux_layout_utils.o
+                0xc0d04204                ux_layout_strings_prepro
  .text.ux_menulist_button
-                0xc0d041f4       0x70 obj/ux_menulist.o
-                0xc0d041f4                ux_menulist_button
+                0xc0d0425c       0x70 obj/ux_menulist.o
+                0xc0d0425c                ux_menulist_button
  .text.ux_menulist_refresh
-                0xc0d04264       0x44 obj/ux_menulist.o
-                0xc0d04264                ux_menulist_refresh
+                0xc0d042cc       0x44 obj/ux_menulist.o
+                0xc0d042cc                ux_menulist_refresh
  .text.ux_menulist_init_select
-                0xc0d042a8       0x3c obj/ux_menulist.o
-                0xc0d042a8                ux_menulist_init_select
+                0xc0d04310       0x3c obj/ux_menulist.o
+                0xc0d04310                ux_menulist_init_select
  .text.ux_menulist_init
-                0xc0d042e4        0xa obj/ux_menulist.o
-                0xc0d042e4                ux_menulist_init
- *fill*         0xc0d042ee        0x2 00
+                0xc0d0434c        0xa obj/ux_menulist.o
+                0xc0d0434c                ux_menulist_init
+ *fill*         0xc0d04356        0x2 00
  .text.ux_stack_push
-                0xc0d042f0       0x38 obj/ux_stack.o
-                0xc0d042f0                ux_stack_push
+                0xc0d04358       0x38 obj/ux_stack.o
+                0xc0d04358                ux_stack_push
  .text.ux_stack_display
-                0xc0d04328       0x4c obj/ux_stack.o
-                0xc0d04328                ux_stack_display
+                0xc0d04390       0x4c obj/ux_stack.o
+                0xc0d04390                ux_stack_display
  .text.ux_stack_init
-                0xc0d04374       0x28 obj/ux_stack.o
-                0xc0d04374                ux_stack_init
+                0xc0d043dc       0x28 obj/ux_stack.o
+                0xc0d043dc                ux_stack_init
  .text.ux_stack_al_display_next_element
-                0xc0d0439c       0x94 obj/ux_stack.o
-                0xc0d0439c                ux_stack_al_display_next_element
- .text          0xc0d04430      0x114 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_udivsi3.o)
-                0xc0d04430                __udivsi3
-                0xc0d04430                __aeabi_uidiv
-                0xc0d0453c                __aeabi_uidivmod
- .text          0xc0d04544        0x4 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_dvmd_tls.o)
-                0xc0d04544                __aeabi_ldiv0
-                0xc0d04544                __aeabi_idiv0
+                0xc0d04404       0x94 obj/ux_stack.o
+                0xc0d04404                ux_stack_al_display_next_element
+ .text          0xc0d04498      0x114 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_udivsi3.o)
+                0xc0d04498                __udivsi3
+                0xc0d04498                __aeabi_uidiv
+                0xc0d045a4                __aeabi_uidivmod
+ .text          0xc0d045ac        0x4 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_dvmd_tls.o)
+                0xc0d045ac                __aeabi_ldiv0
+                0xc0d045ac                __aeabi_idiv0
  .text.__aeabi_memclr
-                0xc0d04548        0xc /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memclr.o)
-                0xc0d04548                __aeabi_memclr8
-                0xc0d04548                __aeabi_memclr
-                0xc0d04548                __aeabi_memclr4
+                0xc0d045b0        0xc /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memclr.o)
+                0xc0d045b0                __aeabi_memclr8
+                0xc0d045b0                __aeabi_memclr
+                0xc0d045b0                __aeabi_memclr4
  .text.__aeabi_memmove
-                0xc0d04554        0x8 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memmove.o)
-                0xc0d04554                __aeabi_memmove8
-                0xc0d04554                __aeabi_memmove
-                0xc0d04554                __aeabi_memmove4
+                0xc0d045bc        0x8 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memmove.o)
+                0xc0d045bc                __aeabi_memmove8
+                0xc0d045bc                __aeabi_memmove
+                0xc0d045bc                __aeabi_memmove4
  .text.__aeabi_memset
-                0xc0d0455c       0x10 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memset.o)
-                0xc0d0455c                __aeabi_memset
-                0xc0d0455c                __aeabi_memset8
-                0xc0d0455c                __aeabi_memset4
- .text.memmove  0xc0d0456c       0x98 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memmove.o)
-                0xc0d0456c                memmove
- .text.memset   0xc0d04604       0x8c /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memset.o)
-                0xc0d04604                memset
- .text          0xc0d04690       0x34 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-setjmp.o)
-                0xc0d04690                setjmp
-                0xc0d046a8                longjmp
- .text.strlen   0xc0d046c4       0x68 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-strlen-stub.o)
-                0xc0d046c4                strlen
+                0xc0d045c4       0x10 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memset.o)
+                0xc0d045c4                __aeabi_memset
+                0xc0d045c4                __aeabi_memset8
+                0xc0d045c4                __aeabi_memset4
+ .text.memmove  0xc0d045d4       0x98 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memmove.o)
+                0xc0d045d4                memmove
+ .text.memset   0xc0d0466c       0x8c /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memset.o)
+                0xc0d0466c                memset
+ .text          0xc0d046f8       0x34 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-setjmp.o)
+                0xc0d046f8                setjmp
+                0xc0d04710                longjmp
+ .text.strlen   0xc0d0472c       0x68 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-strlen-stub.o)
+                0xc0d0472c                strlen
  *(.rodata)
  *(.rodata.[^N]*)
  .rodata.str1.1
-                0xc0d0472c       0x17 obj/getAddress.o
- *fill*         0xc0d04743        0x1 00
+                0xc0d04794       0x17 obj/getAddress.o
+ *fill*         0xc0d047ab        0x1 00
  .rodata.ux_display_public_flow_5_step_val
-                0xc0d04744        0x8 obj/getAddress.o
-                0xc0d04744                ux_display_public_flow_5_step_val
+                0xc0d047ac        0x8 obj/getAddress.o
+                0xc0d047ac                ux_display_public_flow_5_step_val
  .rodata.ux_display_public_flow_5_step
-                0xc0d0474c       0x10 obj/getAddress.o
-                0xc0d0474c                ux_display_public_flow_5_step
+                0xc0d047b4       0x10 obj/getAddress.o
+                0xc0d047b4                ux_display_public_flow_5_step
  .rodata.ux_display_public_flow_6_step_validate_step
-                0xc0d0475c       0x10 obj/getAddress.o
-                0xc0d0475c                ux_display_public_flow_6_step_validate_step
+                0xc0d047c4       0x10 obj/getAddress.o
+                0xc0d047c4                ux_display_public_flow_6_step_validate_step
  .rodata.ux_display_public_flow_6_step_validate
-                0xc0d0476c        0x8 obj/getAddress.o
-                0xc0d0476c                ux_display_public_flow_6_step_validate
+                0xc0d047d4        0x8 obj/getAddress.o
+                0xc0d047d4                ux_display_public_flow_6_step_validate
  .rodata.ux_display_public_flow_6_step_val
-                0xc0d04774        0x8 obj/getAddress.o
-                0xc0d04774                ux_display_public_flow_6_step_val
+                0xc0d047dc        0x8 obj/getAddress.o
+                0xc0d047dc                ux_display_public_flow_6_step_val
  .rodata.ux_display_public_flow_6_step
-                0xc0d0477c       0x10 obj/getAddress.o
-                0xc0d0477c                ux_display_public_flow_6_step
+                0xc0d047e4       0x10 obj/getAddress.o
+                0xc0d047e4                ux_display_public_flow_6_step
  .rodata.ux_display_public_flow_7_step_validate_step
-                0xc0d0478c       0x10 obj/getAddress.o
-                0xc0d0478c                ux_display_public_flow_7_step_validate_step
+                0xc0d047f4       0x10 obj/getAddress.o
+                0xc0d047f4                ux_display_public_flow_7_step_validate_step
  .rodata.ux_display_public_flow_7_step_validate
-                0xc0d0479c        0x8 obj/getAddress.o
-                0xc0d0479c                ux_display_public_flow_7_step_validate
+                0xc0d04804        0x8 obj/getAddress.o
+                0xc0d04804                ux_display_public_flow_7_step_validate
  .rodata.ux_display_public_flow_7_step_val
-                0xc0d047a4        0x8 obj/getAddress.o
-                0xc0d047a4                ux_display_public_flow_7_step_val
+                0xc0d0480c        0x8 obj/getAddress.o
+                0xc0d0480c                ux_display_public_flow_7_step_val
  .rodata.ux_display_public_flow_7_step
-                0xc0d047ac       0x10 obj/getAddress.o
-                0xc0d047ac                ux_display_public_flow_7_step
+                0xc0d04814       0x10 obj/getAddress.o
+                0xc0d04814                ux_display_public_flow_7_step
  .rodata.ux_display_public_flow
-                0xc0d047bc       0x10 obj/getAddress.o
-                0xc0d047bc                ux_display_public_flow
+                0xc0d04824       0x10 obj/getAddress.o
+                0xc0d04824                ux_display_public_flow
  .rodata.C_oneLedger_logo_colors
-                0xc0d047cc        0x8 obj/glyphs.o
-                0xc0d047cc                C_oneLedger_logo_colors
+                0xc0d04834        0x8 obj/glyphs.o
+                0xc0d04834                C_oneLedger_logo_colors
  .rodata.C_oneLedger_logo_bitmap
-                0xc0d047d4       0x20 obj/glyphs.o
-                0xc0d047d4                C_oneLedger_logo_bitmap
+                0xc0d0483c       0x20 obj/glyphs.o
+                0xc0d0483c                C_oneLedger_logo_bitmap
  .rodata.C_oneLedger_logo
-                0xc0d047f4       0x14 obj/glyphs.o
-                0xc0d047f4                C_oneLedger_logo
+                0xc0d0485c       0x14 obj/glyphs.o
+                0xc0d0485c                C_oneLedger_logo
  .rodata.C_icon_coggle_colors
-                0xc0d04808        0x8 obj/glyphs.o
-                0xc0d04808                C_icon_coggle_colors
+                0xc0d04870        0x8 obj/glyphs.o
+                0xc0d04870                C_icon_coggle_colors
  .rodata.C_icon_coggle_bitmap
-                0xc0d04810       0x19 obj/glyphs.o
-                0xc0d04810                C_icon_coggle_bitmap
- *fill*         0xc0d04829        0x3 00
+                0xc0d04878       0x19 obj/glyphs.o
+                0xc0d04878                C_icon_coggle_bitmap
+ *fill*         0xc0d04891        0x3 00
  .rodata.C_icon_coggle
-                0xc0d0482c       0x14 obj/glyphs.o
-                0xc0d0482c                C_icon_coggle
+                0xc0d04894       0x14 obj/glyphs.o
+                0xc0d04894                C_icon_coggle
  .rodata.C_icon_crossmark_colors
-                0xc0d04840        0x8 obj/glyphs.o
-                0xc0d04840                C_icon_crossmark_colors
+                0xc0d048a8        0x8 obj/glyphs.o
+                0xc0d048a8                C_icon_crossmark_colors
  .rodata.C_icon_crossmark_bitmap
-                0xc0d04848       0x19 obj/glyphs.o
-                0xc0d04848                C_icon_crossmark_bitmap
- *fill*         0xc0d04861        0x3 00
+                0xc0d048b0       0x19 obj/glyphs.o
+                0xc0d048b0                C_icon_crossmark_bitmap
+ *fill*         0xc0d048c9        0x3 00
  .rodata.C_icon_crossmark
-                0xc0d04864       0x14 obj/glyphs.o
-                0xc0d04864                C_icon_crossmark
+                0xc0d048cc       0x14 obj/glyphs.o
+                0xc0d048cc                C_icon_crossmark
  .rodata.C_icon_dashboard_x_colors
-                0xc0d04878        0x8 obj/glyphs.o
-                0xc0d04878                C_icon_dashboard_x_colors
+                0xc0d048e0        0x8 obj/glyphs.o
+                0xc0d048e0                C_icon_dashboard_x_colors
  .rodata.C_icon_dashboard_x_bitmap
-                0xc0d04880       0x19 obj/glyphs.o
-                0xc0d04880                C_icon_dashboard_x_bitmap
- *fill*         0xc0d04899        0x3 00
+                0xc0d048e8       0x19 obj/glyphs.o
+                0xc0d048e8                C_icon_dashboard_x_bitmap
+ *fill*         0xc0d04901        0x3 00
  .rodata.C_icon_dashboard_x
-                0xc0d0489c       0x14 obj/glyphs.o
-                0xc0d0489c                C_icon_dashboard_x
+                0xc0d04904       0x14 obj/glyphs.o
+                0xc0d04904                C_icon_dashboard_x
  .rodata.C_icon_down_colors
-                0xc0d048b0        0x8 obj/glyphs.o
-                0xc0d048b0                C_icon_down_colors
+                0xc0d04918        0x8 obj/glyphs.o
+                0xc0d04918                C_icon_down_colors
  .rodata.C_icon_down_bitmap
-                0xc0d048b8        0x4 obj/glyphs.o
-                0xc0d048b8                C_icon_down_bitmap
+                0xc0d04920        0x4 obj/glyphs.o
+                0xc0d04920                C_icon_down_bitmap
  .rodata.C_icon_down
-                0xc0d048bc       0x14 obj/glyphs.o
-                0xc0d048bc                C_icon_down
+                0xc0d04924       0x14 obj/glyphs.o
+                0xc0d04924                C_icon_down
  .rodata.C_icon_left_colors
-                0xc0d048d0        0x8 obj/glyphs.o
-                0xc0d048d0                C_icon_left_colors
+                0xc0d04938        0x8 obj/glyphs.o
+                0xc0d04938                C_icon_left_colors
  .rodata.C_icon_left_bitmap
-                0xc0d048d8        0x4 obj/glyphs.o
-                0xc0d048d8                C_icon_left_bitmap
+                0xc0d04940        0x4 obj/glyphs.o
+                0xc0d04940                C_icon_left_bitmap
  .rodata.C_icon_left
-                0xc0d048dc       0x14 obj/glyphs.o
-                0xc0d048dc                C_icon_left
+                0xc0d04944       0x14 obj/glyphs.o
+                0xc0d04944                C_icon_left
  .rodata.C_icon_right_colors
-                0xc0d048f0        0x8 obj/glyphs.o
-                0xc0d048f0                C_icon_right_colors
+                0xc0d04958        0x8 obj/glyphs.o
+                0xc0d04958                C_icon_right_colors
  .rodata.C_icon_right_bitmap
-                0xc0d048f8        0x4 obj/glyphs.o
-                0xc0d048f8                C_icon_right_bitmap
+                0xc0d04960        0x4 obj/glyphs.o
+                0xc0d04960                C_icon_right_bitmap
  .rodata.C_icon_right
-                0xc0d048fc       0x14 obj/glyphs.o
-                0xc0d048fc                C_icon_right
+                0xc0d04964       0x14 obj/glyphs.o
+                0xc0d04964                C_icon_right
  .rodata.C_icon_up_colors
-                0xc0d04910        0x8 obj/glyphs.o
-                0xc0d04910                C_icon_up_colors
+                0xc0d04978        0x8 obj/glyphs.o
+                0xc0d04978                C_icon_up_colors
  .rodata.C_icon_up_bitmap
-                0xc0d04918        0x4 obj/glyphs.o
-                0xc0d04918                C_icon_up_bitmap
+                0xc0d04980        0x4 obj/glyphs.o
+                0xc0d04980                C_icon_up_bitmap
  .rodata.C_icon_up
-                0xc0d0491c       0x14 obj/glyphs.o
-                0xc0d0491c                C_icon_up
+                0xc0d04984       0x14 obj/glyphs.o
+                0xc0d04984                C_icon_up
  .rodata.C_icon_validate_14_colors
-                0xc0d04930        0x8 obj/glyphs.o
-                0xc0d04930                C_icon_validate_14_colors
+                0xc0d04998        0x8 obj/glyphs.o
+                0xc0d04998                C_icon_validate_14_colors
  .rodata.C_icon_validate_14_bitmap
-                0xc0d04938       0x19 obj/glyphs.o
-                0xc0d04938                C_icon_validate_14_bitmap
- *fill*         0xc0d04951        0x3 00
+                0xc0d049a0       0x19 obj/glyphs.o
+                0xc0d049a0                C_icon_validate_14_bitmap
+ *fill*         0xc0d049b9        0x3 00
  .rodata.C_icon_validate_14
-                0xc0d04954       0x14 obj/glyphs.o
-                0xc0d04954                C_icon_validate_14
+                0xc0d049bc       0x14 obj/glyphs.o
+                0xc0d049bc                C_icon_validate_14
  .rodata.str1.1
-                0xc0d04968       0x3b obj/menu.o
- *fill*         0xc0d049a3        0x1 00
+                0xc0d049d0       0x3b obj/menu.o
+ *fill*         0xc0d04a0b        0x1 00
  .rodata.ux_idle_flow_1_step_val
-                0xc0d049a4        0xc obj/menu.o
-                0xc0d049a4                ux_idle_flow_1_step_val
+                0xc0d04a0c        0xc obj/menu.o
+                0xc0d04a0c                ux_idle_flow_1_step_val
  .rodata.ux_idle_flow_1_step
-                0xc0d049b0       0x10 obj/menu.o
-                0xc0d049b0                ux_idle_flow_1_step
+                0xc0d04a18       0x10 obj/menu.o
+                0xc0d04a18                ux_idle_flow_1_step
  .rodata.ux_idle_flow_2_step_validate_step
-                0xc0d049c0       0x10 obj/menu.o
-                0xc0d049c0                ux_idle_flow_2_step_validate_step
- .rodata.ux_idle_flow_2_step_validate
-                0xc0d049d0        0x8 obj/menu.o
-                0xc0d049d0                ux_idle_flow_2_step_validate
- .rodata.ux_idle_flow_2_step_val
-                0xc0d049d8        0x8 obj/menu.o
-                0xc0d049d8                ux_idle_flow_2_step_val
- .rodata.ux_idle_flow_2_step
-                0xc0d049e0       0x10 obj/menu.o
-                0xc0d049e0                ux_idle_flow_2_step
- .rodata.ux_idle_flow_3_step_val
-                0xc0d049f0        0x8 obj/menu.o
-                0xc0d049f0                ux_idle_flow_3_step_val
- .rodata.ux_idle_flow_3_step
-                0xc0d049f8       0x10 obj/menu.o
-                0xc0d049f8                ux_idle_flow_3_step
- .rodata.ux_idle_flow_4_step_validate_step
-                0xc0d04a08       0x10 obj/menu.o
-                0xc0d04a08                ux_idle_flow_4_step_validate_step
- .rodata.ux_idle_flow_4_step_validate
-                0xc0d04a18        0x8 obj/menu.o
-                0xc0d04a18                ux_idle_flow_4_step_validate
- .rodata.ux_idle_flow_4_step_val
-                0xc0d04a20        0x8 obj/menu.o
-                0xc0d04a20                ux_idle_flow_4_step_val
- .rodata.ux_idle_flow_4_step
                 0xc0d04a28       0x10 obj/menu.o
-                0xc0d04a28                ux_idle_flow_4_step
+                0xc0d04a28                ux_idle_flow_2_step_validate_step
+ .rodata.ux_idle_flow_2_step_validate
+                0xc0d04a38        0x8 obj/menu.o
+                0xc0d04a38                ux_idle_flow_2_step_validate
+ .rodata.ux_idle_flow_2_step_val
+                0xc0d04a40        0x8 obj/menu.o
+                0xc0d04a40                ux_idle_flow_2_step_val
+ .rodata.ux_idle_flow_2_step
+                0xc0d04a48       0x10 obj/menu.o
+                0xc0d04a48                ux_idle_flow_2_step
+ .rodata.ux_idle_flow_3_step_val
+                0xc0d04a58        0x8 obj/menu.o
+                0xc0d04a58                ux_idle_flow_3_step_val
+ .rodata.ux_idle_flow_3_step
+                0xc0d04a60       0x10 obj/menu.o
+                0xc0d04a60                ux_idle_flow_3_step
+ .rodata.ux_idle_flow_4_step_validate_step
+                0xc0d04a70       0x10 obj/menu.o
+                0xc0d04a70                ux_idle_flow_4_step_validate_step
+ .rodata.ux_idle_flow_4_step_validate
+                0xc0d04a80        0x8 obj/menu.o
+                0xc0d04a80                ux_idle_flow_4_step_validate
+ .rodata.ux_idle_flow_4_step_val
+                0xc0d04a88        0x8 obj/menu.o
+                0xc0d04a88                ux_idle_flow_4_step_val
+ .rodata.ux_idle_flow_4_step
+                0xc0d04a90       0x10 obj/menu.o
+                0xc0d04a90                ux_idle_flow_4_step
  .rodata.ux_idle_flow
-                0xc0d04a38       0x18 obj/menu.o
-                0xc0d04a38                ux_idle_flow
+                0xc0d04aa0       0x18 obj/menu.o
+                0xc0d04aa0                ux_idle_flow
  .rodata..L.str
-                0xc0d04a50        0x5 obj/os_io_seproxyhal.o
+                0xc0d04ab8        0x5 obj/os_io_seproxyhal.o
  .rodata..L.str.1
-                0xc0d04a55        0x5 obj/os_io_seproxyhal.o
+                0xc0d04abd        0x5 obj/os_io_seproxyhal.o
  .rodata..L.str.2
-                0xc0d04a5a        0x5 obj/os_io_seproxyhal.o
- .rodata.cst16  0xc0d04a5f       0x20 obj/os_printf.o
+                0xc0d04ac2        0x5 obj/os_io_seproxyhal.o
+ .rodata.cst16  0xc0d04ac7       0x20 obj/os_printf.o
  .rodata.str1.1
-                0xc0d04a7f       0x21 obj/signRawTx.o
-                                 0x30 (size before relaxing)
+                0xc0d04ae7       0x41 obj/signRawTx.o
+                                 0x50 (size before relaxing)
  .rodata.ux_display_sign_flow_1_step_val
-                0xc0d04aa0        0x8 obj/signRawTx.o
-                0xc0d04aa0                ux_display_sign_flow_1_step_val
+                0xc0d04b28        0x8 obj/signRawTx.o
+                0xc0d04b28                ux_display_sign_flow_1_step_val
  .rodata.ux_display_sign_flow_1_step
-                0xc0d04aa8       0x10 obj/signRawTx.o
-                0xc0d04aa8                ux_display_sign_flow_1_step
+                0xc0d04b30       0x10 obj/signRawTx.o
+                0xc0d04b30                ux_display_sign_flow_1_step
+ .rodata.ux_display_sign_amount_step_val
+                0xc0d04b40        0x8 obj/signRawTx.o
+                0xc0d04b40                ux_display_sign_amount_step_val
+ .rodata.ux_display_sign_amount_step
+                0xc0d04b48       0x10 obj/signRawTx.o
+                0xc0d04b48                ux_display_sign_amount_step
+ .rodata.ux_display_sign_recipient_step_val
+                0xc0d04b58        0x8 obj/signRawTx.o
+                0xc0d04b58                ux_display_sign_recipient_step_val
+ .rodata.ux_display_sign_recipient_step
+                0xc0d04b60       0x10 obj/signRawTx.o
+                0xc0d04b60                ux_display_sign_recipient_step
+ .rodata.ux_display_sign_fee_step_val
+                0xc0d04b70        0x8 obj/signRawTx.o
+                0xc0d04b70                ux_display_sign_fee_step_val
+ .rodata.ux_display_sign_fee_step
+                0xc0d04b78       0x10 obj/signRawTx.o
+                0xc0d04b78                ux_display_sign_fee_step
  .rodata.ux_display_sign_flow_2_step_validate_step
-                0xc0d04ab8       0x10 obj/signRawTx.o
-                0xc0d04ab8                ux_display_sign_flow_2_step_validate_step
+                0xc0d04b88       0x10 obj/signRawTx.o
+                0xc0d04b88                ux_display_sign_flow_2_step_validate_step
  .rodata.ux_display_sign_flow_2_step_validate
-                0xc0d04ac8        0x8 obj/signRawTx.o
-                0xc0d04ac8                ux_display_sign_flow_2_step_validate
+                0xc0d04b98        0x8 obj/signRawTx.o
+                0xc0d04b98                ux_display_sign_flow_2_step_validate
  .rodata.ux_display_sign_flow_2_step_val
-                0xc0d04ad0        0x8 obj/signRawTx.o
-                0xc0d04ad0                ux_display_sign_flow_2_step_val
+                0xc0d04ba0        0x8 obj/signRawTx.o
+                0xc0d04ba0                ux_display_sign_flow_2_step_val
  .rodata.ux_display_sign_flow_2_step
-                0xc0d04ad8       0x10 obj/signRawTx.o
-                0xc0d04ad8                ux_display_sign_flow_2_step
+                0xc0d04ba8       0x10 obj/signRawTx.o
+                0xc0d04ba8                ux_display_sign_flow_2_step
  .rodata.ux_display_sign_flow_3_step_validate_step
-                0xc0d04ae8       0x10 obj/signRawTx.o
-                0xc0d04ae8                ux_display_sign_flow_3_step_validate_step
+                0xc0d04bb8       0x10 obj/signRawTx.o
+                0xc0d04bb8                ux_display_sign_flow_3_step_validate_step
  .rodata.ux_display_sign_flow_3_step_validate
-                0xc0d04af8        0x8 obj/signRawTx.o
-                0xc0d04af8                ux_display_sign_flow_3_step_validate
+                0xc0d04bc8        0x8 obj/signRawTx.o
+                0xc0d04bc8                ux_display_sign_flow_3_step_validate
  .rodata.ux_display_sign_flow_3_step_val
-                0xc0d04b00        0x8 obj/signRawTx.o
-                0xc0d04b00                ux_display_sign_flow_3_step_val
+                0xc0d04bd0        0x8 obj/signRawTx.o
+                0xc0d04bd0                ux_display_sign_flow_3_step_val
  .rodata.ux_display_sign_flow_3_step
-                0xc0d04b08       0x10 obj/signRawTx.o
-                0xc0d04b08                ux_display_sign_flow_3_step
+                0xc0d04bd8       0x10 obj/signRawTx.o
+                0xc0d04bd8                ux_display_sign_flow_3_step
  .rodata.ux_display_sign_flow
-                0xc0d04b18       0x10 obj/signRawTx.o
-                0xc0d04b18                ux_display_sign_flow
+                0xc0d04be8       0x10 obj/signRawTx.o
+                0xc0d04be8                ux_display_sign_flow
+ .rodata.ux_display_send_flow
+                0xc0d04bf8       0x1c obj/signRawTx.o
+                0xc0d04bf8                ux_display_send_flow
  .rodata.SW_INTERNAL
-                0xc0d04b28        0x2 obj/u2f_impl.o
+                0xc0d04c14        0x2 obj/u2f_impl.o
  .rodata.SW_BUSY
-                0xc0d04b2a        0x2 obj/u2f_impl.o
+                0xc0d04c16        0x2 obj/u2f_impl.o
  .rodata.SW_WRONG_LENGTH
-                0xc0d04b2c        0x2 obj/u2f_impl.o
+                0xc0d04c18        0x2 obj/u2f_impl.o
  .rodata.SW_PROOF_OF_PRESENCE_REQUIRED
-                0xc0d04b2e        0x2 obj/u2f_impl.o
+                0xc0d04c1a        0x2 obj/u2f_impl.o
  .rodata..L.str
-                0xc0d04b30        0x6 obj/u2f_impl.o
+                0xc0d04c1c        0x6 obj/u2f_impl.o
  .rodata.str1.1
-                0xc0d04b36        0x5 obj/u2f_impl.o
+                0xc0d04c22        0x5 obj/u2f_impl.o
  .rodata..L.str.2
-                0xc0d04b3b        0x5 obj/u2f_impl.o
+                0xc0d04c27        0x5 obj/u2f_impl.o
  .rodata.SW_BAD_KEY_HANDLE
-                0xc0d04b40        0x2 obj/u2f_impl.o
+                0xc0d04c2c        0x2 obj/u2f_impl.o
  .rodata.U2F_VERSION
-                0xc0d04b42        0x8 obj/u2f_impl.o
- .rodata.INFO   0xc0d04b4a        0x4 obj/u2f_impl.o
+                0xc0d04c2e        0x8 obj/u2f_impl.o
+ .rodata.INFO   0xc0d04c36        0x4 obj/u2f_impl.o
  .rodata.SW_UNKNOWN_CLASS
-                0xc0d04b4e        0x2 obj/u2f_impl.o
+                0xc0d04c3a        0x2 obj/u2f_impl.o
  .rodata.SW_UNKNOWN_INSTRUCTION
-                0xc0d04b50        0x2 obj/u2f_impl.o
+                0xc0d04c3c        0x2 obj/u2f_impl.o
  .rodata.BROADCAST_CHANNEL
-                0xc0d04b52        0x4 obj/u2f_transport.o
+                0xc0d04c3e        0x4 obj/u2f_transport.o
  .rodata.FORBIDDEN_CHANNEL
-                0xc0d04b56        0x4 obj/u2f_transport.o
- *fill*         0xc0d04b5a        0x2 00
+                0xc0d04c42        0x4 obj/u2f_transport.o
+ *fill*         0xc0d04c46        0x2 00
  .rodata.USBD_HID_Desc_fido
-                0xc0d04b5c        0x9 obj/usbd_impl.o
-                0xc0d04b5c                USBD_HID_Desc_fido
- *fill*         0xc0d04b65        0x3 00
+                0xc0d04c48        0x9 obj/usbd_impl.o
+                0xc0d04c48                USBD_HID_Desc_fido
+ *fill*         0xc0d04c51        0x3 00
  .rodata.USBD_HID_Desc
-                0xc0d04b68        0x9 obj/usbd_impl.o
-                0xc0d04b68                USBD_HID_Desc
+                0xc0d04c54        0x9 obj/usbd_impl.o
+                0xc0d04c54                USBD_HID_Desc
  .rodata.HID_ReportDesc_fido
-                0xc0d04b71       0x22 obj/usbd_impl.o
+                0xc0d04c5d       0x22 obj/usbd_impl.o
  .rodata.HID_ReportDesc
-                0xc0d04b93       0x22 obj/usbd_impl.o
+                0xc0d04c7f       0x22 obj/usbd_impl.o
  .rodata.C_webusb_url_descriptor
-                0xc0d04bb5       0x17 obj/usbd_impl.o
-                0xc0d04bb5                C_webusb_url_descriptor
+                0xc0d04ca1       0x17 obj/usbd_impl.o
+                0xc0d04ca1                C_webusb_url_descriptor
  .rodata.C_usb_bos
-                0xc0d04bcc       0x39 obj/usbd_impl.o
-                0xc0d04bcc                C_usb_bos
- *fill*         0xc0d04c05        0x3 00
+                0xc0d04cb8       0x39 obj/usbd_impl.o
+                0xc0d04cb8                C_usb_bos
+ *fill*         0xc0d04cf1        0x3 00
  .rodata.HID_Desc
-                0xc0d04c08       0x20 obj/usbd_impl.o
-                0xc0d04c08                HID_Desc
+                0xc0d04cf4       0x20 obj/usbd_impl.o
+                0xc0d04cf4                HID_Desc
  .rodata.C_winusb_string_descriptor
-                0xc0d04c28       0x12 obj/usbd_impl.o
+                0xc0d04d14       0x12 obj/usbd_impl.o
  .rodata.C_winusb_guid
-                0xc0d04c3a       0x92 obj/usbd_impl.o
+                0xc0d04d26       0x92 obj/usbd_impl.o
  .rodata.C_winusb_request_descriptor
-                0xc0d04ccc       0xb2 obj/usbd_impl.o
- *fill*         0xc0d04d7e        0x2 00
+                0xc0d04db8       0xb2 obj/usbd_impl.o
+ *fill*         0xc0d04e6a        0x2 00
  .rodata.USBD_HID
-                0xc0d04d80       0x38 obj/usbd_impl.o
+                0xc0d04e6c       0x38 obj/usbd_impl.o
  .rodata.USBD_U2F
-                0xc0d04db8       0x38 obj/usbd_impl.o
+                0xc0d04ea4       0x38 obj/usbd_impl.o
  .rodata.USBD_WEBUSB
-                0xc0d04df0       0x38 obj/usbd_impl.o
+                0xc0d04edc       0x38 obj/usbd_impl.o
  .rodata.USBD_DeviceDesc
-                0xc0d04e28       0x12 obj/usbd_impl.o
+                0xc0d04f14       0x12 obj/usbd_impl.o
  .rodata.USBD_LangIDDesc
-                0xc0d04e3a        0x4 obj/usbd_impl.o
+                0xc0d04f26        0x4 obj/usbd_impl.o
  .rodata.USBD_MANUFACTURER_STRING
-                0xc0d04e3e        0xe obj/usbd_impl.o
+                0xc0d04f2a        0xe obj/usbd_impl.o
  .rodata.USBD_PRODUCT_FS_STRING
-                0xc0d04e4c        0xe obj/usbd_impl.o
+                0xc0d04f38        0xe obj/usbd_impl.o
  .rodata.USB_SERIAL_STRING
-                0xc0d04e5a        0xa obj/usbd_impl.o
+                0xc0d04f46        0xa obj/usbd_impl.o
  .rodata.C_winusb_wcid
-                0xc0d04e64       0x28 obj/usbd_impl.o
+                0xc0d04f50       0x28 obj/usbd_impl.o
  .rodata.USBD_CfgDesc
-                0xc0d04e8c       0x60 obj/usbd_impl.o
+                0xc0d04f78       0x60 obj/usbd_impl.o
  .rodata.USBD_DeviceQualifierDesc
-                0xc0d04eec        0xa obj/usbd_impl.o
+                0xc0d04fd8        0xa obj/usbd_impl.o
  .rodata.str1.1
-                0xc0d04ef6       0x11 obj/utils.o
- *fill*         0xc0d04f07        0x1 00
+                0xc0d04fe2       0x11 obj/utils.o
+ *fill*         0xc0d04ff3        0x1 00
  .rodata.derivePath
-                0xc0d04f08       0x14 obj/utils.o
+                0xc0d04ff4       0x14 obj/utils.o
  .rodata.ux_layout_bb_elements
-                0xc0d04f1c       0xa0 obj/ux_layout_bb.o
-                0xc0d04f1c                ux_layout_bb_elements
+                0xc0d05008       0xa0 obj/ux_layout_bb.o
+                0xc0d05008                ux_layout_bb_elements
  .rodata.ux_layout_nnbnn_elements
-                0xc0d04fbc       0xc0 obj/ux_layout_nnbnn.o
-                0xc0d04fbc                ux_layout_nnbnn_elements
+                0xc0d050a8       0xc0 obj/ux_layout_nnbnn.o
+                0xc0d050a8                ux_layout_nnbnn_elements
  .rodata.str1.1
-                0xc0d0507c       0x19 obj/ux_layout_paging.o
- *fill*         0xc0d05095        0x3 00
+                0xc0d05168       0x19 obj/ux_layout_paging.o
+ *fill*         0xc0d05181        0x3 00
  .rodata.ux_layout_pb_elements
-                0xc0d05098       0xa0 obj/ux_layout_pb.o
-                0xc0d05098                ux_layout_pb_elements
+                0xc0d05184       0xa0 obj/ux_layout_pb.o
+                0xc0d05184                ux_layout_pb_elements
  .rodata.ux_layout_pbb_elements
-                0xc0d05138       0xc0 obj/ux_layout_pbb.o
-                0xc0d05138                ux_layout_pbb_elements
+                0xc0d05224       0xc0 obj/ux_layout_pbb.o
+                0xc0d05224                ux_layout_pbb_elements
  .rodata.ux_menulist_conststep
-                0xc0d051f8       0x10 obj/ux_menulist.o
-                0xc0d051f8                ux_menulist_conststep
+                0xc0d052e4       0x10 obj/ux_menulist.o
+                0xc0d052e4                ux_menulist_conststep
  .rodata.ux_menulist_constflow
-                0xc0d05208        0x8 obj/ux_menulist.o
-                0xc0d05208                ux_menulist_constflow
+                0xc0d052f4        0x8 obj/ux_menulist.o
+                0xc0d052f4                ux_menulist_constflow
  *(.rodata.N[^_]*)
-                0xc0d05210                . = ALIGN (0x4)
-                0xc0d05210                _etext = .
-                0xc0d05240                . = ALIGN (PAGE_SIZE)
- *fill*         0xc0d05210       0x30 00
-                0xc0d05240                _nvram_data = .
+                0xc0d052fc                . = ALIGN (0x4)
+                0xc0d052fc                _etext = .
+                0xc0d05300                . = ALIGN (PAGE_SIZE)
+ *fill*         0xc0d052fc        0x4 00
+                0xc0d05300                _nvram_data = .
  *(.bss.N_* .rodata.N_*)
  .rodata.N_storage_real
-                0xc0d05240        0x3 obj/globals.o
-                0xc0d05240                N_storage_real
-                0xc0d05280                . = ALIGN (PAGE_SIZE)
- *fill*         0xc0d05243       0x3d 00
-                0xc0d05280                _envram_data = .
-                0xc0d05280                _install_parameters = .
-                0xc0d05280                _envram = .
+                0xc0d05300        0x3 obj/globals.o
+                0xc0d05300                N_storage_real
+                0xc0d05340                . = ALIGN (PAGE_SIZE)
+ *fill*         0xc0d05303       0x3d 00
+                0xc0d05340                _envram_data = .
+                0xc0d05340                _install_parameters = .
+                0xc0d05340                _envram = .
 
-.glue_7         0xc0d05280        0x0
- .glue_7        0xc0d05280        0x0 linker stubs
+.glue_7         0xc0d05340        0x0
+ .glue_7        0xc0d05340        0x0 linker stubs
 
-.glue_7t        0xc0d05280        0x0
- .glue_7t       0xc0d05280        0x0 linker stubs
+.glue_7t        0xc0d05340        0x0
+ .glue_7t       0xc0d05340        0x0 linker stubs
 
-.vfp11_veneer   0xc0d05280        0x0
- .vfp11_veneer  0xc0d05280        0x0 linker stubs
+.vfp11_veneer   0xc0d05340        0x0
+ .vfp11_veneer  0xc0d05340        0x0 linker stubs
 
-.v4_bx          0xc0d05280        0x0
- .v4_bx         0xc0d05280        0x0 linker stubs
+.v4_bx          0xc0d05340        0x0
+ .v4_bx         0xc0d05340        0x0 linker stubs
 
-.iplt           0xc0d05280        0x0
- .iplt          0xc0d05280        0x0 obj/cx.o
+.iplt           0xc0d05340        0x0
+ .iplt          0xc0d05340        0x0 obj/cx.o
 
 .data           0xd0000000        0x0
                 0xd0000000                . = ALIGN (0x4)
@@ -2075,7 +2096,7 @@ END GROUP
 .igot.plt       0xd0000000        0x0
  .igot.plt      0xd0000000        0x0 obj/cx.o
 
-.bss            0x20001800      0x840
+.bss            0x20001800      0x8c4
                 0x20001800                _bss = .
  *(.bss*)
  .bss.address_str
@@ -2131,36 +2152,40 @@ END GROUP
  .bss.G_io_usb_hid_channel
                 0x20001c9c        0x4 obj/os_io_usb.o
                 0x20001c9c                G_io_usb_hid_channel
+ .bss.sendCtx   0x20001ca0       0x80 obj/signRawTx.o
  .bss.signature
-                0x20001ca0       0x72 obj/signRawTx.o
+                0x20001d20       0x72 obj/signRawTx.o
  .bss.sizeOfSignature
-                0x20001d12        0x1 obj/signRawTx.o
- *fill*         0x20001d13        0x1 00
+                0x20001d92        0x1 obj/signRawTx.o
+ *fill*         0x20001d93        0x1 00
  .bss.signCtx.0
-                0x20001d14        0x4 obj/signRawTx.o
+                0x20001d94        0x4 obj/signRawTx.o
  .bss.signCtx.1
-                0x20001d18        0x2 obj/signRawTx.o
- *fill*         0x20001d1a        0x2 00
+                0x20001d98        0x1 obj/signRawTx.o
+ *fill*         0x20001d99        0x3 00
  .bss.signCtx.2
-                0x20001d1c        0x4 obj/signRawTx.o
+                0x20001d9c        0x4 obj/signRawTx.o
+ .bss.signCtx.3
+                0x20001da0        0x1 obj/signRawTx.o
+ *fill*         0x20001da1        0x3 00
  .bss.ep_in_stall
-                0x20001d20        0x4 obj/usbd_conf.o
-                0x20001d20                ep_in_stall
+                0x20001da4        0x4 obj/usbd_conf.o
+                0x20001da4                ep_in_stall
  .bss.ep_out_stall
-                0x20001d24        0x4 obj/usbd_conf.o
-                0x20001d24                ep_out_stall
+                0x20001da8        0x4 obj/usbd_conf.o
+                0x20001da8                ep_out_stall
  .bss.USBD_Device
-                0x20001d28      0x114 obj/usbd_core.o
-                0x20001d28                USBD_Device
-                0x20001e3c                _ebss = .
-                0x20001e3c                . = ALIGN (0x4)
-                0x20001e3c                app_stack_canary = .
+                0x20001dac      0x114 obj/usbd_core.o
+                0x20001dac                USBD_Device
+                0x20001ec0                _ebss = .
+                0x20001ec0                . = ALIGN (0x4)
+                0x20001ec0                app_stack_canary = .
                 [!provide]                PROVIDE (app_stack_canary, .)
-                0x20001e40                . = (. + 0x4)
- *fill*         0x20001e3c        0x4 00
-                0x20001e40                _stack_validation = .
-                0x20002040                . = (_stack_validation + STACK_SIZE)
- *fill*         0x20001e40      0x200 00
+                0x20001ec4                . = (. + 0x4)
+ *fill*         0x20001ec0        0x4 00
+                0x20001ec4                _stack_validation = .
+                0x200020c4                . = (_stack_validation + STACK_SIZE)
+ *fill*         0x20001ec4      0x200 00
                 0x20002600                _stack = (ABSOLUTE (END_STACK) - STACK_SIZE)
                 [!provide]                PROVIDE (_stack, (ABSOLUTE (END_STACK) - STACK_SIZE))
                 0x20002800                _estack = ABSOLUTE (END_STACK)
@@ -3024,7 +3049,7 @@ DEBUG           0xd0000000        0x8
  *(.debug_aranges)
 
 .debug_pubnames
-                0x00000000     0x344a
+                0x00000000     0x353b
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000      0x293 obj/getAddress.o
@@ -3049,53 +3074,53 @@ DEBUG           0xd0000000        0x8
  .debug_pubnames
                 0x00001197       0x23 obj/pic_internal.o
  .debug_pubnames
-                0x000011ba      0x26a obj/signRawTx.o
+                0x000011ba      0x35b obj/signRawTx.o
  .debug_pubnames
-                0x00001424      0xb52 obj/syscalls.o
+                0x00001515      0xb52 obj/syscalls.o
  .debug_pubnames
-                0x00001f76      0x178 obj/u2f_impl.o
+                0x00002067      0x178 obj/u2f_impl.o
  .debug_pubnames
-                0x000020ee       0x22 obj/u2f_io.o
+                0x000021df       0x22 obj/u2f_io.o
  .debug_pubnames
-                0x00002110      0x1c6 obj/u2f_transport.o
+                0x00002201      0x1c6 obj/u2f_transport.o
  .debug_pubnames
-                0x000022d6      0x142 obj/usbd_conf.o
+                0x000023c7      0x142 obj/usbd_conf.o
  .debug_pubnames
-                0x00002418      0x1f0 obj/usbd_core.o
+                0x00002509      0x1f0 obj/usbd_core.o
  .debug_pubnames
-                0x00002608      0x14f obj/usbd_ctlreq.o
+                0x000026f9      0x14f obj/usbd_ctlreq.o
  .debug_pubnames
-                0x00002757       0x4b obj/usbd_hid.o
+                0x00002848       0x4b obj/usbd_hid.o
  .debug_pubnames
-                0x000027a2      0x447 obj/usbd_impl.o
+                0x00002893      0x447 obj/usbd_impl.o
  .debug_pubnames
-                0x00002be9       0xa2 obj/usbd_ioreq.o
+                0x00002cda       0xa2 obj/usbd_ioreq.o
  .debug_pubnames
-                0x00002c8b       0xcf obj/utils.o
+                0x00002d7c       0xcf obj/utils.o
  .debug_pubnames
-                0x00002d5a      0x1b4 obj/ux_flow_engine.o
+                0x00002e4b      0x1b4 obj/ux_flow_engine.o
  .debug_pubnames
-                0x00002f0e       0x5f obj/ux_layout_bb.o
+                0x00002fff       0x5f obj/ux_layout_bb.o
  .debug_pubnames
-                0x00002f6d       0x40 obj/ux_layout_bn.o
+                0x0000305e       0x40 obj/ux_layout_bn.o
  .debug_pubnames
-                0x00002fad       0x63 obj/ux_layout_nnbnn.o
+                0x0000309e       0x63 obj/ux_layout_nnbnn.o
  .debug_pubnames
-                0x00003010      0x10a obj/ux_layout_paging.o
+                0x00003101      0x10a obj/ux_layout_paging.o
  .debug_pubnames
-                0x0000311a       0x5a obj/ux_layout_pb.o
+                0x0000320b       0x5a obj/ux_layout_pb.o
  .debug_pubnames
-                0x00003174       0x7b obj/ux_layout_pbb.o
+                0x00003265       0x7b obj/ux_layout_pbb.o
  .debug_pubnames
-                0x000031ef       0x42 obj/ux_layout_pnn.o
+                0x000032e0       0x42 obj/ux_layout_pnn.o
  .debug_pubnames
-                0x00003231       0x67 obj/ux_layout_utils.o
+                0x00003322       0x67 obj/ux_layout_utils.o
  .debug_pubnames
-                0x00003298       0xa6 obj/ux_menulist.o
+                0x00003389       0xa6 obj/ux_menulist.o
  .debug_pubnames
-                0x0000333e      0x10c obj/ux_stack.o
+                0x0000342f      0x10c obj/ux_stack.o
 
-.debug_info     0x00000000     0xf83a
+.debug_info     0x00000000     0xf93f
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e5 obj/getAddress.o
  .debug_info    0x000004e5      0xcaa obj/globals.o
@@ -3108,29 +3133,29 @@ DEBUG           0xd0000000        0x8
  .debug_info    0x00003eb4      0x218 obj/os_printf.o
  .debug_info    0x000040cc       0x56 obj/pic.o
  .debug_info    0x00004122       0x46 obj/pic_internal.o
- .debug_info    0x00004168      0x634 obj/signRawTx.o
- .debug_info    0x0000479c     0x3db9 obj/syscalls.o
- .debug_info    0x00008555      0x803 obj/u2f_impl.o
- .debug_info    0x00008d58       0xd0 obj/u2f_io.o
- .debug_info    0x00008e28      0x943 obj/u2f_transport.o
- .debug_info    0x0000976b      0x982 obj/usbd_conf.o
- .debug_info    0x0000a0ed      0xb4c obj/usbd_core.o
- .debug_info    0x0000ac39      0xae0 obj/usbd_ctlreq.o
- .debug_info    0x0000b719      0x693 obj/usbd_hid.o
- .debug_info    0x0000bdac      0xdb0 obj/usbd_impl.o
- .debug_info    0x0000cb5c      0x731 obj/usbd_ioreq.o
- .debug_info    0x0000d28d      0x6a4 obj/utils.o
- .debug_info    0x0000d931      0x377 obj/ux_flow_engine.o
- .debug_info    0x0000dca8      0x22c obj/ux_layout_bb.o
- .debug_info    0x0000ded4      0x264 obj/ux_layout_bn.o
- .debug_info    0x0000e138      0x258 obj/ux_layout_nnbnn.o
- .debug_info    0x0000e390      0x452 obj/ux_layout_paging.o
- .debug_info    0x0000e7e2      0x2d1 obj/ux_layout_pb.o
- .debug_info    0x0000eab3      0x326 obj/ux_layout_pbb.o
- .debug_info    0x0000edd9      0x264 obj/ux_layout_pnn.o
- .debug_info    0x0000f03d      0x26c obj/ux_layout_utils.o
- .debug_info    0x0000f2a9      0x21e obj/ux_menulist.o
- .debug_info    0x0000f4c7      0x373 obj/ux_stack.o
+ .debug_info    0x00004168      0x739 obj/signRawTx.o
+ .debug_info    0x000048a1     0x3db9 obj/syscalls.o
+ .debug_info    0x0000865a      0x803 obj/u2f_impl.o
+ .debug_info    0x00008e5d       0xd0 obj/u2f_io.o
+ .debug_info    0x00008f2d      0x943 obj/u2f_transport.o
+ .debug_info    0x00009870      0x982 obj/usbd_conf.o
+ .debug_info    0x0000a1f2      0xb4c obj/usbd_core.o
+ .debug_info    0x0000ad3e      0xae0 obj/usbd_ctlreq.o
+ .debug_info    0x0000b81e      0x693 obj/usbd_hid.o
+ .debug_info    0x0000beb1      0xdb0 obj/usbd_impl.o
+ .debug_info    0x0000cc61      0x731 obj/usbd_ioreq.o
+ .debug_info    0x0000d392      0x6a4 obj/utils.o
+ .debug_info    0x0000da36      0x377 obj/ux_flow_engine.o
+ .debug_info    0x0000ddad      0x22c obj/ux_layout_bb.o
+ .debug_info    0x0000dfd9      0x264 obj/ux_layout_bn.o
+ .debug_info    0x0000e23d      0x258 obj/ux_layout_nnbnn.o
+ .debug_info    0x0000e495      0x452 obj/ux_layout_paging.o
+ .debug_info    0x0000e8e7      0x2d1 obj/ux_layout_pb.o
+ .debug_info    0x0000ebb8      0x326 obj/ux_layout_pbb.o
+ .debug_info    0x0000eede      0x264 obj/ux_layout_pnn.o
+ .debug_info    0x0000f142      0x26c obj/ux_layout_utils.o
+ .debug_info    0x0000f3ae      0x21e obj/ux_menulist.o
+ .debug_info    0x0000f5cc      0x373 obj/ux_stack.o
 
 .debug_abbrev   0x00000000     0x2a89
  *(.debug_abbrev)
@@ -3169,7 +3194,7 @@ DEBUG           0xd0000000        0x8
  .debug_abbrev  0x00002826       0xf2 obj/ux_menulist.o
  .debug_abbrev  0x00002918      0x171 obj/ux_stack.o
 
-.debug_line     0x00000000     0x8b22
+.debug_line     0x00000000     0x8b69
  *(.debug_line)
  .debug_line    0x00000000      0x24e obj/getAddress.o
  .debug_line    0x0000024e      0x1a9 obj/globals.o
@@ -3182,31 +3207,31 @@ DEBUG           0xd0000000        0x8
  .debug_line    0x0000221a      0x3c9 obj/os_printf.o
  .debug_line    0x000025e3       0x75 obj/pic.o
  .debug_line    0x00002658       0x6c obj/pic_internal.o
- .debug_line    0x000026c4      0x2bb obj/signRawTx.o
- .debug_line    0x0000297f     0x1863 obj/syscalls.o
- .debug_line    0x000041e2      0x473 obj/u2f_impl.o
- .debug_line    0x00004655      0x196 obj/u2f_io.o
- .debug_line    0x000047eb      0x94d obj/u2f_transport.o
- .debug_line    0x00005138      0x38b obj/usbd_conf.o
- .debug_line    0x000054c3      0x6b4 obj/usbd_core.o
- .debug_line    0x00005b77      0x7fe obj/usbd_ctlreq.o
- .debug_line    0x00006375      0x28c obj/usbd_hid.o
- .debug_line    0x00006601      0x683 obj/usbd_impl.o
- .debug_line    0x00006c84      0x285 obj/usbd_ioreq.o
- .debug_line    0x00006f09      0x3b2 obj/utils.o
- .debug_line    0x000072bb      0x5f9 obj/ux_flow_engine.o
- .debug_line    0x000078b4      0x12a obj/ux_layout_bb.o
- .debug_line    0x000079de      0x134 obj/ux_layout_bn.o
- .debug_line    0x00007b12      0x14e obj/ux_layout_nnbnn.o
- .debug_line    0x00007c60      0x39a obj/ux_layout_paging.o
- .debug_line    0x00007ffa      0x162 obj/ux_layout_pb.o
- .debug_line    0x0000815c      0x191 obj/ux_layout_pbb.o
- .debug_line    0x000082ed      0x135 obj/ux_layout_pnn.o
- .debug_line    0x00008422      0x186 obj/ux_layout_utils.o
- .debug_line    0x000085a8      0x1b1 obj/ux_menulist.o
- .debug_line    0x00008759      0x3c9 obj/ux_stack.o
+ .debug_line    0x000026c4      0x302 obj/signRawTx.o
+ .debug_line    0x000029c6     0x1863 obj/syscalls.o
+ .debug_line    0x00004229      0x473 obj/u2f_impl.o
+ .debug_line    0x0000469c      0x196 obj/u2f_io.o
+ .debug_line    0x00004832      0x94d obj/u2f_transport.o
+ .debug_line    0x0000517f      0x38b obj/usbd_conf.o
+ .debug_line    0x0000550a      0x6b4 obj/usbd_core.o
+ .debug_line    0x00005bbe      0x7fe obj/usbd_ctlreq.o
+ .debug_line    0x000063bc      0x28c obj/usbd_hid.o
+ .debug_line    0x00006648      0x683 obj/usbd_impl.o
+ .debug_line    0x00006ccb      0x285 obj/usbd_ioreq.o
+ .debug_line    0x00006f50      0x3b2 obj/utils.o
+ .debug_line    0x00007302      0x5f9 obj/ux_flow_engine.o
+ .debug_line    0x000078fb      0x12a obj/ux_layout_bb.o
+ .debug_line    0x00007a25      0x134 obj/ux_layout_bn.o
+ .debug_line    0x00007b59      0x14e obj/ux_layout_nnbnn.o
+ .debug_line    0x00007ca7      0x39a obj/ux_layout_paging.o
+ .debug_line    0x00008041      0x162 obj/ux_layout_pb.o
+ .debug_line    0x000081a3      0x191 obj/ux_layout_pbb.o
+ .debug_line    0x00008334      0x135 obj/ux_layout_pnn.o
+ .debug_line    0x00008469      0x186 obj/ux_layout_utils.o
+ .debug_line    0x000085ef      0x1b1 obj/ux_menulist.o
+ .debug_line    0x000087a0      0x3c9 obj/ux_stack.o
 
-.debug_frame    0x00000000     0x2958
+.debug_frame    0x00000000     0x295c
  *(.debug_frame)
  .debug_frame   0x00000000       0x90 obj/getAddress.o
  .debug_frame   0x00000090       0xf0 obj/main.o
@@ -3217,38 +3242,38 @@ DEBUG           0xd0000000        0x8
  .debug_frame   0x0000073c       0x34 obj/os_printf.o
  .debug_frame   0x00000770       0x28 obj/pic.o
  .debug_frame   0x00000798       0x20 obj/pic_internal.o
- .debug_frame   0x000007b8       0x78 obj/signRawTx.o
- .debug_frame   0x00000830      0xeac obj/syscalls.o
- .debug_frame   0x000016dc       0xe8 obj/u2f_impl.o
- .debug_frame   0x000017c4       0x2c obj/u2f_io.o
- .debug_frame   0x000017f0      0x13c obj/u2f_transport.o
- .debug_frame   0x0000192c      0x168 obj/usbd_conf.o
- .debug_frame   0x00001a94      0x1f0 obj/usbd_core.o
- .debug_frame   0x00001c84      0x1a0 obj/usbd_ctlreq.o
- .debug_frame   0x00001e24       0x68 obj/usbd_hid.o
- .debug_frame   0x00001e8c      0x210 obj/usbd_impl.o
- .debug_frame   0x0000209c       0xa8 obj/usbd_ioreq.o
- .debug_frame   0x00002144       0xf4 obj/utils.o
- .debug_frame   0x00002238      0x1c4 obj/ux_flow_engine.o
- .debug_frame   0x000023fc       0x40 obj/ux_layout_bb.o
- .debug_frame   0x0000243c       0x40 obj/ux_layout_bn.o
- .debug_frame   0x0000247c       0x44 obj/ux_layout_nnbnn.o
- .debug_frame   0x000024c0       0xb8 obj/ux_layout_paging.o
- .debug_frame   0x00002578       0x44 obj/ux_layout_pb.o
- .debug_frame   0x000025bc       0x5c obj/ux_layout_pbb.o
- .debug_frame   0x00002618       0x40 obj/ux_layout_pnn.o
- .debug_frame   0x00002658       0x54 obj/ux_layout_utils.o
- .debug_frame   0x000026ac       0x80 obj/ux_menulist.o
- .debug_frame   0x0000272c      0x114 obj/ux_stack.o
- .debug_frame   0x00002840       0x20 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_udivsi3.o)
- .debug_frame   0x00002860       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memclr.o)
- .debug_frame   0x00002888       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memmove.o)
- .debug_frame   0x000028b0       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memset.o)
- .debug_frame   0x000028d8       0x2c /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memmove.o)
- .debug_frame   0x00002904       0x2c /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memset.o)
- .debug_frame   0x00002930       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-strlen-stub.o)
+ .debug_frame   0x000007b8       0x7c obj/signRawTx.o
+ .debug_frame   0x00000834      0xeac obj/syscalls.o
+ .debug_frame   0x000016e0       0xe8 obj/u2f_impl.o
+ .debug_frame   0x000017c8       0x2c obj/u2f_io.o
+ .debug_frame   0x000017f4      0x13c obj/u2f_transport.o
+ .debug_frame   0x00001930      0x168 obj/usbd_conf.o
+ .debug_frame   0x00001a98      0x1f0 obj/usbd_core.o
+ .debug_frame   0x00001c88      0x1a0 obj/usbd_ctlreq.o
+ .debug_frame   0x00001e28       0x68 obj/usbd_hid.o
+ .debug_frame   0x00001e90      0x210 obj/usbd_impl.o
+ .debug_frame   0x000020a0       0xa8 obj/usbd_ioreq.o
+ .debug_frame   0x00002148       0xf4 obj/utils.o
+ .debug_frame   0x0000223c      0x1c4 obj/ux_flow_engine.o
+ .debug_frame   0x00002400       0x40 obj/ux_layout_bb.o
+ .debug_frame   0x00002440       0x40 obj/ux_layout_bn.o
+ .debug_frame   0x00002480       0x44 obj/ux_layout_nnbnn.o
+ .debug_frame   0x000024c4       0xb8 obj/ux_layout_paging.o
+ .debug_frame   0x0000257c       0x44 obj/ux_layout_pb.o
+ .debug_frame   0x000025c0       0x5c obj/ux_layout_pbb.o
+ .debug_frame   0x0000261c       0x40 obj/ux_layout_pnn.o
+ .debug_frame   0x0000265c       0x54 obj/ux_layout_utils.o
+ .debug_frame   0x000026b0       0x80 obj/ux_menulist.o
+ .debug_frame   0x00002730      0x114 obj/ux_stack.o
+ .debug_frame   0x00002844       0x20 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00002864       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memclr.o)
+ .debug_frame   0x0000288c       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memmove.o)
+ .debug_frame   0x000028b4       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-aeabi_memset.o)
+ .debug_frame   0x000028dc       0x2c /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memmove.o)
+ .debug_frame   0x00002908       0x2c /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-memset.o)
+ .debug_frame   0x00002934       0x28 /home/kevin/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc.a(lib_a-strlen-stub.o)
 
-.debug_str      0x00000000     0x5888
+.debug_str      0x00000000     0x5982
  *(.debug_str)
  .debug_str     0x00000000      0x426 obj/getAddress.o
                                 0x48b (size before relaxing)
@@ -3272,54 +3297,54 @@ DEBUG           0xd0000000        0x8
                                  0x99 (size before relaxing)
  .debug_str     0x000026de       0x43 obj/pic_internal.o
                                  0x9e (size before relaxing)
- .debug_str     0x00002721      0x31e obj/signRawTx.o
-                                0x792 (size before relaxing)
- .debug_str     0x00002a3f      0xf60 obj/syscalls.o
+ .debug_str     0x00002721      0x418 obj/signRawTx.o
+                                0x88c (size before relaxing)
+ .debug_str     0x00002b39      0xf60 obj/syscalls.o
                                0x1bbb (size before relaxing)
- .debug_str     0x0000399f      0x192 obj/u2f_impl.o
+ .debug_str     0x00003a99      0x192 obj/u2f_impl.o
                                 0x676 (size before relaxing)
- .debug_str     0x00003b31       0x47 obj/u2f_io.o
+ .debug_str     0x00003c2b       0x47 obj/u2f_io.o
                                 0x13b (size before relaxing)
- .debug_str     0x00003b78      0x268 obj/u2f_transport.o
+ .debug_str     0x00003c72      0x268 obj/u2f_transport.o
                                 0x6c6 (size before relaxing)
- .debug_str     0x00003de0      0x62e obj/usbd_conf.o
+ .debug_str     0x00003eda      0x62e obj/usbd_conf.o
                                 0x799 (size before relaxing)
- .debug_str     0x0000440e      0x213 obj/usbd_core.o
+ .debug_str     0x00004508      0x213 obj/usbd_core.o
                                 0x85f (size before relaxing)
- .debug_str     0x00004621      0x162 obj/usbd_ctlreq.o
+ .debug_str     0x0000471b      0x162 obj/usbd_ctlreq.o
                                 0x7e2 (size before relaxing)
- .debug_str     0x00004783       0x8c obj/usbd_hid.o
+ .debug_str     0x0000487d       0x8c obj/usbd_hid.o
                                 0x6cc (size before relaxing)
- .debug_str     0x0000480f      0x3a8 obj/usbd_impl.o
+ .debug_str     0x00004909      0x3a8 obj/usbd_impl.o
                                 0xba6 (size before relaxing)
- .debug_str     0x00004bb7       0xd4 obj/usbd_ioreq.o
+ .debug_str     0x00004cb1       0xd4 obj/usbd_ioreq.o
                                 0x718 (size before relaxing)
- .debug_str     0x00004c8b       0xe2 obj/utils.o
+ .debug_str     0x00004d85       0xe2 obj/utils.o
                                 0x616 (size before relaxing)
- .debug_str     0x00004d6d      0x229 obj/ux_flow_engine.o
+ .debug_str     0x00004e67      0x229 obj/ux_flow_engine.o
                                 0x2fe (size before relaxing)
- .debug_str     0x00004f96       0x7e obj/ux_layout_bb.o
+ .debug_str     0x00005090       0x7e obj/ux_layout_bb.o
                                 0x24f (size before relaxing)
- .debug_str     0x00005014      0x282 obj/ux_layout_bn.o
+ .debug_str     0x0000510e      0x282 obj/ux_layout_bn.o
                                 0x449 (size before relaxing)
- .debug_str     0x00005296       0x85 obj/ux_layout_nnbnn.o
+ .debug_str     0x00005390       0x85 obj/ux_layout_nnbnn.o
                                 0x2a1 (size before relaxing)
- .debug_str     0x0000531b      0x150 obj/ux_layout_paging.o
+ .debug_str     0x00005415      0x150 obj/ux_layout_paging.o
                                 0x38a (size before relaxing)
- .debug_str     0x0000546b       0x79 obj/ux_layout_pb.o
+ .debug_str     0x00005565       0x79 obj/ux_layout_pb.o
                                 0x2ca (size before relaxing)
- .debug_str     0x000054e4       0xd7 obj/ux_layout_pbb.o
+ .debug_str     0x000055de       0xd7 obj/ux_layout_pbb.o
                                 0x2fc (size before relaxing)
- .debug_str     0x000055bb       0x66 obj/ux_layout_pnn.o
+ .debug_str     0x000056b5       0x66 obj/ux_layout_pnn.o
                                 0x44c (size before relaxing)
- .debug_str     0x00005621       0x90 obj/ux_layout_utils.o
+ .debug_str     0x0000571b       0x90 obj/ux_layout_utils.o
                                 0x2af (size before relaxing)
- .debug_str     0x000056b1       0xca obj/ux_menulist.o
+ .debug_str     0x000057ab       0xca obj/ux_menulist.o
                                 0x1fb (size before relaxing)
- .debug_str     0x0000577b      0x10d obj/ux_stack.o
+ .debug_str     0x00005875      0x10d obj/ux_stack.o
                                 0x37f (size before relaxing)
 
-.debug_loc      0x00000000     0x6070
+.debug_loc      0x00000000     0x607b
  *(.debug_loc)
  .debug_loc     0x00000000       0xeb obj/getAddress.o
  .debug_loc     0x000000eb      0x32d obj/main.o
@@ -3329,29 +3354,29 @@ DEBUG           0xd0000000        0x8
  .debug_loc     0x0000110b      0x118 obj/os_io_usb.o
  .debug_loc     0x00001223      0x5f2 obj/os_printf.o
  .debug_loc     0x00001815       0x13 obj/pic.o
- .debug_loc     0x00001828      0x108 obj/signRawTx.o
- .debug_loc     0x00001930     0x1fce obj/syscalls.o
- .debug_loc     0x000038fe      0x4b7 obj/u2f_impl.o
- .debug_loc     0x00003db5       0x4f obj/u2f_io.o
- .debug_loc     0x00003e04      0x64d obj/u2f_transport.o
- .debug_loc     0x00004451      0x225 obj/usbd_conf.o
- .debug_loc     0x00004676      0x4a7 obj/usbd_core.o
- .debug_loc     0x00004b1d      0x5ea obj/usbd_ctlreq.o
- .debug_loc     0x00005107      0x11e obj/usbd_hid.o
- .debug_loc     0x00005225      0x339 obj/usbd_impl.o
- .debug_loc     0x0000555e      0x12b obj/usbd_ioreq.o
- .debug_loc     0x00005689      0x204 obj/utils.o
- .debug_loc     0x0000588d      0x141 obj/ux_flow_engine.o
- .debug_loc     0x000059ce       0x5a obj/ux_layout_bb.o
- .debug_loc     0x00005a28       0x44 obj/ux_layout_bn.o
- .debug_loc     0x00005a6c       0x4f obj/ux_layout_nnbnn.o
- .debug_loc     0x00005abb      0x247 obj/ux_layout_paging.o
- .debug_loc     0x00005d02       0x4f obj/ux_layout_pb.o
- .debug_loc     0x00005d51       0x8b obj/ux_layout_pbb.o
- .debug_loc     0x00005ddc       0x44 obj/ux_layout_pnn.o
- .debug_loc     0x00005e20       0x57 obj/ux_layout_utils.o
- .debug_loc     0x00005e77       0xfe obj/ux_menulist.o
- .debug_loc     0x00005f75       0xfb obj/ux_stack.o
+ .debug_loc     0x00001828      0x113 obj/signRawTx.o
+ .debug_loc     0x0000193b     0x1fce obj/syscalls.o
+ .debug_loc     0x00003909      0x4b7 obj/u2f_impl.o
+ .debug_loc     0x00003dc0       0x4f obj/u2f_io.o
+ .debug_loc     0x00003e0f      0x64d obj/u2f_transport.o
+ .debug_loc     0x0000445c      0x225 obj/usbd_conf.o
+ .debug_loc     0x00004681      0x4a7 obj/usbd_core.o
+ .debug_loc     0x00004b28      0x5ea obj/usbd_ctlreq.o
+ .debug_loc     0x00005112      0x11e obj/usbd_hid.o
+ .debug_loc     0x00005230      0x339 obj/usbd_impl.o
+ .debug_loc     0x00005569      0x12b obj/usbd_ioreq.o
+ .debug_loc     0x00005694      0x204 obj/utils.o
+ .debug_loc     0x00005898      0x141 obj/ux_flow_engine.o
+ .debug_loc     0x000059d9       0x5a obj/ux_layout_bb.o
+ .debug_loc     0x00005a33       0x44 obj/ux_layout_bn.o
+ .debug_loc     0x00005a77       0x4f obj/ux_layout_nnbnn.o
+ .debug_loc     0x00005ac6      0x247 obj/ux_layout_paging.o
+ .debug_loc     0x00005d0d       0x4f obj/ux_layout_pb.o
+ .debug_loc     0x00005d5c       0x8b obj/ux_layout_pbb.o
+ .debug_loc     0x00005de7       0x44 obj/ux_layout_pnn.o
+ .debug_loc     0x00005e2b       0x57 obj/ux_layout_utils.o
+ .debug_loc     0x00005e82       0xfe obj/ux_menulist.o
+ .debug_loc     0x00005f80       0xfb obj/ux_stack.o
 
 .debug_macinfo  0x00000000       0x22
  *(.debug_macinfo)
@@ -3468,7 +3493,7 @@ OUTPUT(bin/app.elf elf32-littlearm)
  .debug_ranges  0x00000e60       0x58 obj/ux_stack.o
 
 .debug_pubtypes
-                0x00000000     0x3698
+                0x00000000     0x36a9
  .debug_pubtypes
                 0x00000000      0x191 obj/getAddress.o
  .debug_pubtypes
@@ -3492,48 +3517,48 @@ OUTPUT(bin/app.elf elf32-littlearm)
  .debug_pubtypes
                 0x00000d23       0x23 obj/pic_internal.o
  .debug_pubtypes
-                0x00000d46      0x218 obj/signRawTx.o
+                0x00000d46      0x229 obj/signRawTx.o
  .debug_pubtypes
-                0x00000f5e      0x4bd obj/syscalls.o
+                0x00000f6f      0x4bd obj/syscalls.o
  .debug_pubtypes
-                0x0000141b       0xf9 obj/u2f_impl.o
+                0x0000142c       0xf9 obj/u2f_impl.o
  .debug_pubtypes
-                0x00001514       0x87 obj/u2f_io.o
+                0x00001525       0x87 obj/u2f_io.o
  .debug_pubtypes
-                0x0000159b      0x102 obj/u2f_transport.o
+                0x000015ac      0x102 obj/u2f_transport.o
  .debug_pubtypes
-                0x0000169d      0x366 obj/usbd_conf.o
+                0x000016ae      0x366 obj/usbd_conf.o
  .debug_pubtypes
-                0x00001a03      0x366 obj/usbd_core.o
+                0x00001a14      0x366 obj/usbd_core.o
  .debug_pubtypes
-                0x00001d69      0x366 obj/usbd_ctlreq.o
+                0x00001d7a      0x366 obj/usbd_ctlreq.o
  .debug_pubtypes
-                0x000020cf      0x34f obj/usbd_hid.o
+                0x000020e0      0x34f obj/usbd_hid.o
  .debug_pubtypes
-                0x0000241e      0x34f obj/usbd_impl.o
+                0x0000242f      0x34f obj/usbd_impl.o
  .debug_pubtypes
-                0x0000276d      0x366 obj/usbd_ioreq.o
+                0x0000277e      0x366 obj/usbd_ioreq.o
  .debug_pubtypes
-                0x00002ad3      0x1cd obj/utils.o
+                0x00002ae4      0x1cd obj/utils.o
  .debug_pubtypes
-                0x00002ca0       0x79 obj/ux_flow_engine.o
+                0x00002cb1       0x79 obj/ux_flow_engine.o
  .debug_pubtypes
-                0x00002d19       0xcd obj/ux_layout_bb.o
+                0x00002d2a       0xcd obj/ux_layout_bb.o
  .debug_pubtypes
-                0x00002de6       0xcd obj/ux_layout_bn.o
+                0x00002df7       0xcd obj/ux_layout_bn.o
  .debug_pubtypes
-                0x00002eb3      0x10b obj/ux_layout_nnbnn.o
+                0x00002ec4      0x10b obj/ux_layout_nnbnn.o
  .debug_pubtypes
-                0x00002fbe      0x109 obj/ux_layout_paging.o
+                0x00002fcf      0x109 obj/ux_layout_paging.o
  .debug_pubtypes
-                0x000030c7      0x131 obj/ux_layout_pb.o
+                0x000030d8      0x131 obj/ux_layout_pb.o
  .debug_pubtypes
-                0x000031f8      0x145 obj/ux_layout_pbb.o
+                0x00003209      0x145 obj/ux_layout_pbb.o
  .debug_pubtypes
-                0x0000333d       0xcd obj/ux_layout_pnn.o
+                0x0000334e       0xcd obj/ux_layout_pnn.o
  .debug_pubtypes
-                0x0000340a      0x10b obj/ux_layout_utils.o
+                0x0000341b      0x10b obj/ux_layout_utils.o
  .debug_pubtypes
-                0x00003515       0x9f obj/ux_menulist.o
+                0x00003526       0x9f obj/ux_menulist.o
  .debug_pubtypes
-                0x000035b4       0xe4 obj/ux_stack.o
+                0x000035c5       0xe4 obj/ux_stack.o
