@@ -126,7 +126,7 @@ def getAddress(account_num):
     dongle = getDongle(True)
     result = dongle.exchange(apdu)
 
-    address = '0x' + result[:40].decode("utf-8")
+    address = '0lt' + result[:40].decode("utf-8")
     pubKey = '0x' + result[40:].decode("utf-8")
 
     print("Address received: 0x" + result[:40].decode("utf-8"))
